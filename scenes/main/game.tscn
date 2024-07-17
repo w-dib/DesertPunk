@@ -482,13 +482,14 @@ theme = ExtResource("5_mmume")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/InfoTracker"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_right = 1.857
 anchor_bottom = 1.0
+offset_right = 0.00999451
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_mmume")
-theme_override_constants/margin_left = 7
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/InfoTracker/MarginContainer"]
@@ -599,11 +600,11 @@ text = "324"
 
 [node name="Control" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
+anchor_left = 0.706
 anchor_right = 1.0
-offset_left = -188.0
-offset_bottom = 40.0
+anchor_bottom = 0.111
+offset_left = 0.159973
+offset_bottom = 0.0399971
 grow_horizontal = 0
 size_flags_horizontal = 4
 theme = ExtResource("5_mmume")
@@ -613,11 +614,12 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_mmume")
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 5
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/Control/MarginContainer"]
 layout_mode = 2
