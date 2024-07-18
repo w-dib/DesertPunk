@@ -1,18 +1,35 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://0e4aimj026h8"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://0e4aimj026h8"]
 
 [ext_resource type="FontFile" uid="uid://d0ys8eirka3lo" path="res://assets/fonts/kenney_mini_square.ttf" id="1_l5ljw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v4mw"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.407843)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxibp"]
 content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-bg_color = Color(0.211765, 0.439216, 1, 0.713726)
+bg_color = Color(0.282353, 0.627451, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
-corner_detail = 6
+corner_detail = 5
 
 [resource]
 default_font = ExtResource("1_l5ljw")
@@ -30,4 +47,5 @@ Label/constants/shadow_outline_size = 0
 Label/font_sizes/font_size = 8
 Label/fonts/font = ExtResource("1_l5ljw")
 Label/styles/normal = null
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1v4mw")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_mxibp")
