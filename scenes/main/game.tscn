@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cqu2iss2l2sym"]
+[gd_scene load_steps=24 format=3 uid="uid://cqu2iss2l2sym"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
@@ -8,7 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://b34253l2qn71t" path="res://assets/tile_maps/DesertTilemapBlankBackground.png" id="6_5d38u"]
 [ext_resource type="PackedScene" uid="uid://noaelpdlywqs" path="res://scenes/UI/ui.tscn" id="6_dhwtt"]
 [ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/GrazingCowIdleSide.png" id="7_0ursj"]
+[ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="7_nldxv"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/PasturingSheepIdleSide.png" id="8_c46ho"]
+[ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="8_vufiq"]
+[ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="14_yyn2l"]
+[ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="15_hhqkg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qk7ri"]
 texture = ExtResource("2_vcnjb")
@@ -328,6 +332,22 @@ texture = ExtResource("8_c46ho")
 2:0/0 = 0
 3:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kkcuh"]
+texture = ExtResource("8_vufiq")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ro4n0"]
+texture = ExtResource("15_hhqkg")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf01t"]
+texture = ExtResource("14_yyn2l")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pe2t"]
+texture = ExtResource("7_nldxv")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_a8i5v"]
 custom_data_layer_0/name = "Buildable"
 custom_data_layer_0/type = 1
@@ -336,6 +356,10 @@ sources/1 = SubResource("TileSetAtlasSource_xqva8")
 sources/2 = SubResource("TileSetAtlasSource_5y26j")
 sources/3 = SubResource("TileSetAtlasSource_ishgj")
 sources/4 = SubResource("TileSetAtlasSource_ycahg")
+sources/5 = SubResource("TileSetAtlasSource_kkcuh")
+sources/6 = SubResource("TileSetAtlasSource_ro4n0")
+sources/7 = SubResource("TileSetAtlasSource_gf01t")
+sources/8 = SubResource("TileSetAtlasSource_7pe2t")
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("hover_mouse", "tile_map")]
 script = ExtResource("1_kfgdk")
@@ -365,3 +389,5 @@ layer_3/name = "deployable"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="UI" parent="." instance=ExtResource("6_dhwtt")]
+
+[connection signal="deployable_passed" from="UI" to="." method="_on_ui_deployable_passed"]

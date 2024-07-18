@@ -1,10 +1,17 @@
 extends CanvasLayer
 
+signal deployable_passed(deployable : Deployable)
+
 @export var build_bar: PanelContainer
 @export var barley_button: Button
 @export var dates_button: Button
 @export var goat_button: Button
 @export var camel_button: Button
+
+@export var barley_resource : Growable 
+@export var dates_resource : Growable
+@export var goat_resource : Growable
+@export var camel_resource : Growable
 
 func _ready() -> void:
 	barley_button.pressed.connect(handle_action_bar_press.bind(barley_button))
@@ -15,7 +22,7 @@ func _ready() -> void:
 func handle_action_bar_press(button_pressed) -> void:
 	match button_pressed:
 		barley_button:
-			print("barley")
+			deploy_barley()
 		dates_button:
 			print("dates")
 		goat_button:
@@ -23,5 +30,8 @@ func handle_action_bar_press(button_pressed) -> void:
 		camel_button:
 			print("camel")
 
-func _on_hammer_button_toggled(toggled_on: bool) -> void:
+func _on_hammer_button_toggled(_toggled_on: bool) -> void:
 	build_bar.visible = !build_bar.visible
+
+func deploy_barley():
+	deployable_passed.emit(barley_resource)

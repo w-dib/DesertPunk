@@ -1,9 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://noaelpdlywqs"]
+[gd_scene load_steps=22 format=3 uid="uid://noaelpdlywqs"]
 
 [ext_resource type="Script" path="res://scripts/UI/UI.gd" id="1_fdw0t"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="2_qxfbr"]
+[ext_resource type="Resource" uid="uid://bcbhd2t5dslxw" path="res://resources/plants/barley.tres" id="2_ugbnq"]
 [ext_resource type="Texture2D" uid="uid://cg4kq6q07jho" path="res://temp/UI/mark_question.png" id="3_u2js7"]
+[ext_resource type="Resource" uid="uid://x56371fy2cmy" path="res://resources/plants/dates.tres" id="3_yj0vm"]
+[ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="4_oyjvt"]
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="4_wvrwy"]
+[ext_resource type="Resource" uid="uid://s4cgle27sbwl" path="res://resources/animals/camel.tres" id="5_jplgw"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="5_xvnit"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/PasturingSheepIdleSide.png" id="6_wadh2"]
 [ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/GrazingCowIdleSide.png" id="7_5ie6m"]
@@ -31,6 +35,10 @@ barley_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomConta
 dates_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/DatesButton")
 goat_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/GoatButton")
 camel_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/CamelButton")
+barley_resource = ExtResource("2_ugbnq")
+dates_resource = ExtResource("3_yj0vm")
+goat_resource = ExtResource("4_oyjvt")
+camel_resource = ExtResource("5_jplgw")
 
 [node name="ActionBarControl" type="Control" parent="."]
 custom_minimum_size = Vector2(640, 95)

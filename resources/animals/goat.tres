@@ -1,12 +1,12 @@
-[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://s4cgle27sbwl"]
+[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://yah5jogo0q4h"]
 
-[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_fedfu"]
+[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_5lc5h"]
 
 [resource]
-script = ExtResource("1_fedfu")
-name = "Camel"
-sells_for = 15
-growth_time = 5
+script = ExtResource("1_5lc5h")
+name = "Goat"
+sells_for = 5
+growth_time = 2
 only_grows_on_action = false
 needs_daily_watering_to_grow = false
 needs_nearby_plants_to_grow = true
