@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://x56371fy2cmy"]
+
+[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_inwsk"]
+
+[resource]
+script = ExtResource("1_inwsk")
+name = "Dates"
+sells_for = 10
+growth_time = 8
+only_grows_on_action = true
+needs_daily_watering_to_grow = false
+needs_nearby_plants_to_grow = false
+can_be_gifted = false
+costs_action_to_deply = false
+tilemap_source = 0
+tilemap_coordinates = Vector2i(0, 0)

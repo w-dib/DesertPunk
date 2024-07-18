@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://bcbhd2t5dslxw"]
+
+[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_h551s"]
+
+[resource]
+script = ExtResource("1_h551s")
+name = "Barley"
+sells_for = 2
+growth_time = 2
+only_grows_on_action = true
+needs_daily_watering_to_grow = true
+needs_nearby_plants_to_grow = false
+can_be_gifted = false
+costs_action_to_deply = true
+tilemap_source = 0
+tilemap_coordinates = Vector2i(0, 0)

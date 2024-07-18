@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://s4cgle27sbwl"]
+
+[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_fedfu"]
+
+[resource]
+script = ExtResource("1_fedfu")
+name = "Camel"
+sells_for = 15
+growth_time = 5
+only_grows_on_action = false
+needs_daily_watering_to_grow = false
+needs_nearby_plants_to_grow = true
+can_be_gifted = false
+costs_action_to_deply = true
+tilemap_source = 0
+tilemap_coordinates = Vector2i(0, 0)

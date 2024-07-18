@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bok213me2v2io"
-path="res://.godot/imported/PasturingSheepIdleSide.png-e7b365114491a382e8962521e51c38f2.ctex"
+uid="uid://b34253l2qn71t"
+path="res://.godot/imported/DesertTilemapBlankBackground.png-a50c46c72e98c1de988cf651d58d7a34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/PasturingSheepIdleSide.png"
-dest_files=["res://.godot/imported/PasturingSheepIdleSide.png-e7b365114491a382e8962521e51c38f2.ctex"]
+source_file="res://assets/tile_maps/DesertTilemapBlankBackground.png"
+dest_files=["res://.godot/imported/DesertTilemapBlankBackground.png-a50c46c72e98c1de988cf651d58d7a34.ctex"]
 
 [params]
 

@@ -1,0 +1,385 @@
+[gd_scene load_steps=18 format=3 uid="uid://noaelpdlywqs"]
+
+[ext_resource type="Script" path="res://scripts/UI/UI.gd" id="1_fdw0t"]
+[ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="2_qxfbr"]
+[ext_resource type="Texture2D" uid="uid://cg4kq6q07jho" path="res://temp/UI/mark_question.png" id="3_u2js7"]
+[ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="4_wvrwy"]
+[ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="5_xvnit"]
+[ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/PasturingSheepIdleSide.png" id="6_wadh2"]
+[ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/GrazingCowIdleSide.png" id="7_5ie6m"]
+[ext_resource type="Texture2D" uid="uid://dakn3r5jsi667" path="res://assets/icons/hammer.png" id="8_ktomk"]
+[ext_resource type="Texture2D" uid="uid://cm8xai6eqofem" path="res://assets/icons/candle.png" id="9_va0er"]
+[ext_resource type="Texture2D" uid="uid://cgfrsvhr04qgo" path="res://assets/icons/calendar.png" id="10_icg0r"]
+[ext_resource type="Texture2D" uid="uid://d32qiepekicqr" path="res://assets/icons/water.png" id="11_3ont5"]
+[ext_resource type="Texture2D" uid="uid://b5r6tj5emuex8" path="res://assets/icons/coin.png" id="12_6ohtf"]
+[ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="13_hggv1"]
+[ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="14_yh67f"]
+[ext_resource type="Texture2D" uid="uid://ccmxikhuq66vy" path="res://assets/icons/unlock.png" id="15_aia5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iqwr"]
+atlas = ExtResource("6_wadh2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bah3k"]
+atlas = ExtResource("7_5ie6m")
+region = Rect2(0, 0, 16, 16)
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar")]
+script = ExtResource("1_fdw0t")
+build_bar = NodePath("ActionBarControl/BuildBar")
+
+[node name="ActionBarControl" type="Control" parent="."]
+custom_minimum_size = Vector2(640, 95)
+layout_mode = 3
+anchor_top = 0.85
+anchor_right = 1.0
+anchor_bottom = 0.884
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="BuildBar" type="PanelContainer" parent="ActionBarControl"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -129.0
+offset_right = 129.0
+offset_bottom = 42.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ActionBarControl/BuildBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="BuildMenu" type="GridContainer" parent="ActionBarControl/BuildBar/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 10
+
+[node name="Button" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="ActionBar" type="PanelContainer" parent="ActionBarControl"]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -145.0
+offset_top = -50.0
+offset_right = 145.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ActionBarControl/ActionBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="BottomContainer" type="HBoxContainer" parent="ActionBarControl/ActionBar/MarginContainer"]
+layout_mode = 2
+
+[node name="Help" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+icon = ExtResource("3_u2js7")
+expand_icon = true
+
+[node name="ButtonContainer" type="HBoxContainer" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+size_flags_stretch_ratio = 5.0
+
+[node name="BarleyButton" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_wvrwy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DatesButton" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("5_xvnit")
+expand_icon = true
+
+[node name="VSeparator" type="VSeparator" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="GoatButton" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_7iqwr")
+expand_icon = true
+
+[node name="CamelButton" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_bah3k")
+expand_icon = true
+
+[node name="VSeparator2" type="VSeparator" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="HammerButton" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+toggle_mode = true
+icon = ExtResource("8_ktomk")
+expand_icon = true
+
+[node name="VSeparator3" type="VSeparator" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="EndDay" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("9_va0er")
+icon_alignment = 1
+expand_icon = true
+
+[node name="InfoTracker" type="Control" parent="."]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 3
+anchor_bottom = 0.339
+offset_right = 70.0
+offset_bottom = -0.0400085
+grow_vertical = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="MarginContainer" type="MarginContainer" parent="InfoTracker"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.857
+anchor_bottom = 1.0
+offset_right = 0.00999451
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qxfbr")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InfoTracker/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="Calendar" type="HBoxContainer" parent="InfoTracker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="CalendarIcon" type="TextureRect" parent="InfoTracker/MarginContainer/VBoxContainer/Calendar"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("10_icg0r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CalendarText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/Calendar"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "Day 1"
+
+[node name="WaterContainer" type="HBoxContainer" parent="InfoTracker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="WaterIcon" type="TextureRect" parent="InfoTracker/MarginContainer/VBoxContainer/WaterContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("11_3ont5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="InfoTracker/MarginContainer/VBoxContainer/WaterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme = ExtResource("2_qxfbr")
+max_value = 10.0
+step = 1.0
+value = 5.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/WaterContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qxfbr")
+text = "5 / 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinContainer" type="HBoxContainer" parent="InfoTracker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="CoinIcon" type="TextureRect" parent="InfoTracker/MarginContainer/VBoxContainer/CoinContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("12_6ohtf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/CoinContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "324"
+
+[node name="WoodContainer" type="HBoxContainer" parent="InfoTracker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="WoodIcon" type="TextureRect" parent="InfoTracker/MarginContainer/VBoxContainer/WoodContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("13_hggv1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WoodText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/WoodContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "324"
+
+[node name="StoneContainer" type="HBoxContainer" parent="InfoTracker/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="StoneIcon" type="TextureRect" parent="InfoTracker/MarginContainer/VBoxContainer/StoneContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("14_yh67f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StoneText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/StoneContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "324"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.706
+anchor_right = 1.0
+anchor_bottom = 0.111
+offset_left = 0.159973
+offset_bottom = 0.0399971
+grow_horizontal = 0
+size_flags_horizontal = 4
+theme = ExtResource("2_qxfbr")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qxfbr")
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_qxfbr")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NextRentText" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "Pay "
+
+[node name="CoinIcon" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("12_6ohtf")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NextRentText2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "422 In next 3 days"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_qxfbr")
+
+[node name="GiftIcon" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+texture = ExtResource("15_aia5v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qxfbr")
+text = "free tile"
+
+[connection signal="toggled" from="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/HammerButton" to="." method="_on_hammer_button_toggled"]

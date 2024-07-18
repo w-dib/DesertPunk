@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://yah5jogo0q4h"]
+
+[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_5lc5h"]
+
+[resource]
+script = ExtResource("1_5lc5h")
+name = "Goat"
+sells_for = 5
+growth_time = 2
+only_grows_on_action = false
+needs_daily_watering_to_grow = false
+needs_nearby_plants_to_grow = true
+can_be_gifted = false
+costs_action_to_deply = true
+tilemap_source = 0
+tilemap_coordinates = Vector2i(0, 0)
