@@ -22,9 +22,9 @@ func _ready() -> void:
 func handle_action_bar_press(button_pressed) -> void:
 	match button_pressed:
 		barley_button:
-			deploy_barley()
+			deploy(barley_resource)
 		dates_button:
-			print("dates")
+			deploy(dates_resource)
 		goat_button:
 			print("goat")
 		camel_button:
@@ -33,5 +33,5 @@ func handle_action_bar_press(button_pressed) -> void:
 func _on_hammer_button_toggled(_toggled_on: bool) -> void:
 	build_bar.visible = !build_bar.visible
 
-func deploy_barley():
-	deployable_passed.emit(barley_resource)
+func deploy(resource):
+	deployable_passed.emit(resource)

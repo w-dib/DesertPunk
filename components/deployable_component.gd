@@ -9,7 +9,7 @@ class_name DeployableComponent
 
 @export var cell_width: int = 48
 @export var cell_height: int = 48
-@export var parent_building : Node2D
+@export var parent_building : Area2D
 
 var has_built = false
 
@@ -41,6 +41,7 @@ func _draw():
 		draw_rect(building_area,Color.TRANSPARENT)
 
 func can_build(cell_position: Vector2i) -> bool:
+	# Check tilemap conditions
 	for cell in get_all_surrounding_cells(cell_position):
 		var tile_data = tile_map.get_cell_tile_data(2, cell)
 		if tile_data is TileData:
@@ -49,8 +50,12 @@ func can_build(cell_position: Vector2i) -> bool:
 				return false
 		else:
 			return false
+	# Check for overlapping bodies
+	if parent_building.has_overlapping_areas():
+		return false
+		
 	return true
-
+	
 func get_all_surrounding_cells(middle_cell):
 	surrounding_cells = []
 	var target_cell

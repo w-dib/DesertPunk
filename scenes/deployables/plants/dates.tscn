@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://mrei8i4gf6be"]
+
+[ext_resource type="Texture2D" uid="uid://btyigwgbyd20h" path="res://temp/Group 7.png" id="1_d2nxr"]
+[ext_resource type="Script" path="res://components/deployable_component.gd" id="2_x7043"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7dg4"]
+size = Vector2(48, 48)
+
+[node name="Dates" type="Area2D"]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.92549, 0.447059, 0.870588, 1)
+texture = ExtResource("1_d2nxr")
+
+[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
+script = ExtResource("2_x7043")
+parent_building = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y7dg4")
