@@ -361,10 +361,8 @@ sources/6 = SubResource("TileSetAtlasSource_ro4n0")
 sources/7 = SubResource("TileSetAtlasSource_gf01t")
 sources/8 = SubResource("TileSetAtlasSource_7pe2t")
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("hover_mouse", "tile_map")]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_kfgdk")
-hover_mouse = NodePath("HoverMouse")
-tile_map = NodePath("World/TileMap")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
@@ -390,6 +388,8 @@ layer_3/name = "deployable"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="UI" parent="." instance=ExtResource("6_dhwtt")]
+
+[node name="PreviewTile" type="Node" parent="."]
 
 [node name="DeployedTiles" type="Node" parent="."]
 

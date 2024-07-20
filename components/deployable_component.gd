@@ -13,12 +13,12 @@ class_name DeployableComponent
 
 var has_built = false
 
-signal build_building
+signal deployable_deployed
 
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if can_build(tile_map_position):
-			build_building.emit()
+			deployable_deployed.emit()
 			has_built = true
 			queue_redraw()
 
