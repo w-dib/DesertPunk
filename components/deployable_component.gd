@@ -17,9 +17,6 @@ signal build_building
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		print(tile_map_position)
-		print(get_all_surrounding_cells(tile_map_position))
-		print(can_build(tile_map_position))
 		if can_build(tile_map_position):
 			build_building.emit()
 			has_built = true

@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	mouse_position = get_global_mouse_position()
 	tile_map_position = tile_map.local_to_map(mouse_position)
 
-	#hover_mouse.show_hover_mouse()
+	hover_mouse.show_hover_mouse()
 	
 func _on_ui_deployable_passed(deployable: DeployableResource) -> void:
 	current_deployable = deployable
