@@ -1,4 +1,4 @@
-extends Deployable
+extends DeployableResource
 class_name Growable
 
 #includes animals and plants

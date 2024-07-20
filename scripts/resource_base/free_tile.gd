@@ -1,4 +1,4 @@
-extends Deployable
+extends DeployableResource
 class_name FreeTile
 
 @export var name : String

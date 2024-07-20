@@ -1,4 +1,4 @@
-extends Deployable
+extends DeployableResource
 class_name Building
 
 @export var name : String

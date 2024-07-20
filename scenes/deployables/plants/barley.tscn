@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3onv6oeq6wr7"]
+
+[ext_resource type="Texture2D" uid="uid://btyigwgbyd20h" path="res://temp/Group 7.png" id="1_rkpew"]
+[ext_resource type="Script" path="res://components/deployable_component.gd" id="2_wo27o"]
+
+[node name="Barley" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rkpew")
+
+[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
+script = ExtResource("2_wo27o")
+parent_building = NodePath("..")

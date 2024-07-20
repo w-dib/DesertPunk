@@ -376,7 +376,8 @@ tile_map = NodePath("../World/TileMap")
 
 [node name="World" type="Node2D" parent="."]
 
-[node name="TileMap" type="TileMap" parent="World"]
+[node name="TileMap" type="TileMap" parent="World" groups=["tilemap"]]
+unique_name_in_owner = true
 tile_set = SubResource("TileSet_a8i5v")
 format = 2
 layer_0/name = "background"
@@ -389,5 +390,7 @@ layer_3/name = "deployable"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="UI" parent="." instance=ExtResource("6_dhwtt")]
+
+[node name="DeployedTiles" type="Node" parent="."]
 
 [connection signal="deployable_passed" from="UI" to="." method="_on_ui_deployable_passed"]

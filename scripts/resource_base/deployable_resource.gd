@@ -1,5 +1,5 @@
 extends Resource
-class_name Deployable
+class_name DeployableResource
 
 enum TileType {
 	GROWABLE,
@@ -12,3 +12,4 @@ enum TileType {
 @export var costs_action_to_deply : bool
 @export var tile_map_source : int
 @export var tile_map_coordinates : Vector2i
+@export_file("*.tscn") var deployable_scene: String

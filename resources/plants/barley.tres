@@ -14,3 +14,4 @@ can_be_free_tile = false
 costs_action_to_deply = true
 tile_map_source = 8
 tile_map_coordinates = Vector2i(0, 0)
+deployable_scene = "res://scenes/deployables/plants/barley.tscn"

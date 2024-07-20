@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal deployable_passed(deployable : Deployable)
+signal deployable_passed(deployable : DeployableResource)
 
 @export var build_bar: PanelContainer
 @export var barley_button: Button

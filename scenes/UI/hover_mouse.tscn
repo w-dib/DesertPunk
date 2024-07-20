@@ -19,6 +19,7 @@ animations = [{
 }]
 
 [node name="HoverMouse" type="AnimatedSprite2D"]
+scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_j5u5i")
 autoplay = "default"
 frame_progress = 0.829359
