@@ -238,6 +238,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="CalendarText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/Calendar"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_qxfbr")
 text = "Day 1"
@@ -255,6 +256,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="ProgressBar" type="ProgressBar" parent="InfoTracker/MarginContainer/VBoxContainer/WaterContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -264,7 +266,8 @@ step = 1.0
 value = 5.0
 show_percentage = false
 
-[node name="Label" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/WaterContainer/ProgressBar"]
+[node name="WaterText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/WaterContainer/ProgressBar"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -289,6 +292,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="CoinText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/CoinContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_qxfbr")
 text = "324"
@@ -306,6 +310,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="WoodText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/WoodContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_qxfbr")
 text = "324"
@@ -323,6 +328,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="StoneText" type="Label" parent="InfoTracker/MarginContainer/VBoxContainer/StoneContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_qxfbr")
 text = "324"
