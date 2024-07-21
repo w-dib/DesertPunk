@@ -65,3 +65,4 @@ func get_all_surrounding_cells(middle_cell):
 			if target_cell != middle_cell:
 				surrounding_cells.append(target_cell)
 	return surrounding_cells
+

@@ -28,7 +28,7 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("7_5ie6m")
 region = Rect2(0, 0, 16, 16)
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "end_day_button")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "end_day_button", "popup_panel", "yes_button", "no_button")]
 script = ExtResource("1_fdw0t")
 build_bar = NodePath("ActionBarControl/BuildBar")
 barley_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/BarleyButton")
@@ -36,6 +36,9 @@ dates_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContai
 goat_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/GoatButton")
 camel_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/CamelButton")
 end_day_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/EndDay")
+popup_panel = NodePath("PopupPanel")
+yes_button = NodePath("PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/YesButton")
+no_button = NodePath("PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/NoButton")
 barley_resource = ExtResource("2_ugbnq")
 dates_resource = ExtResource("3_yj0vm")
 goat_resource = ExtResource("4_oyjvt")
@@ -400,5 +403,79 @@ stretch_mode = 5
 layout_mode = 2
 theme = ExtResource("2_qxfbr")
 text = "free tile"
+
+[node name="PopupPanel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qxfbr")
+
+[node name="ColorRect" type="ColorRect" parent="PopupPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.572549)
+
+[node name="PanelContainer" type="PanelContainer" parent="PopupPanel"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PopupPanel/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel/PanelContainer/Panel"]
+layout_mode = 2
+offset_top = -3.0
+offset_right = 200.0
+offset_bottom = 47.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel/PanelContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Start new day?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="YesButton" type="Button" parent="PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Yes"
+
+[node name="NoButton" type="Button" parent="PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "No"
 
 [connection signal="toggled" from="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/HammerButton" to="." method="_on_hammer_button_toggled"]

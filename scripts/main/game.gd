@@ -16,9 +16,9 @@ func _ready() -> void:
 	ui.day_advanced.connect(_on_day_advanced)
 	pass
 
-func _process(_delta: float) -> void:
-	if !preview_active:
-		hover_mouse.show_hover_mouse()
+#func _process(_delta: float) -> void:
+	#if !preview_active:
+		#hover_mouse.show_hover_mouse()
 
 func _input(event):
 	if event.is_action_pressed("cancel"):
@@ -58,3 +58,4 @@ func build(deployable):
 
 func _on_day_advanced():
 	DataManager.water = 10
+	

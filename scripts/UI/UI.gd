@@ -9,11 +9,15 @@ signal day_advanced
 @export var goat_button: Button
 @export var camel_button: Button
 @export var end_day_button: Button
+@export var popup_panel: Control
+@export var yes_button: Button
+@export var no_button: Button
 
 @export var barley_resource : Growable 
 @export var dates_resource : Growable
 @export var goat_resource : Growable
 @export var camel_resource : Growable
+
 
 @onready var calendar_text: Label = %CalendarText
 @onready var coin_text: Label = %CoinText
@@ -23,11 +27,14 @@ signal day_advanced
 @onready var water_text: Label = %WaterText
 
 func _ready() -> void:
+	popup_panel.hide()
 	barley_button.pressed.connect(handle_action_bar_press.bind(barley_button))
 	dates_button.pressed.connect(handle_action_bar_press.bind(dates_button))
 	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
 	camel_button.pressed.connect(handle_action_bar_press.bind(camel_button))
 	end_day_button.pressed.connect(handle_action_bar_press.bind(end_day_button))
+	yes_button.pressed.connect(handle_action_bar_press.bind(yes_button))
+	no_button.pressed.connect(handle_action_bar_press.bind(no_button))
 	
 func _process(delta: float) -> void:
 	calendar_text.text = str(DataManager.calendar)
@@ -48,7 +55,13 @@ func handle_action_bar_press(button_pressed) -> void:
 		camel_button:
 			print("camel")
 		end_day_button:
-			end_day()
+			check_end_day()
+		yes_button:
+			emit_signal("day_advanced")
+			DataManager.calendar += 1
+			popup_panel.hide()
+		no_button:
+			popup_panel.hide()
 
 func _on_hammer_button_toggled(_toggled_on: bool) -> void:
 	build_bar.visible = !build_bar.visible
@@ -56,6 +69,5 @@ func _on_hammer_button_toggled(_toggled_on: bool) -> void:
 func deploy(resource):
 	deployable_passed.emit(resource)
 
-func end_day():
-	DataManager.calendar += 1
-	emit_signal("day_advanced")
+func check_end_day():
+	popup_panel.show()
