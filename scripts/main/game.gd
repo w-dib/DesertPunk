@@ -36,8 +36,10 @@ func _on_deployable_deployed() -> void:
 	current_deployable = null
 	DataManager.water -= 1
 	for node in get_tree().get_nodes_in_group("deployed_tiles"):
-		if node.get_node("DeployableComponent").has_signal("deployable_deployed"):
-			node.get_node("DeployableComponent").disconnect("deployable_deployed" , _on_deployable_deployed)
+		var deployable_component = node.get_node("DeployableComponent")
+		if deployable_component.has_signal("deployable_deployed"):
+			if deployable_component.is_connected("deployable_deployed" , _on_deployable_deployed):
+				deployable_component.disconnect("deployable_deployed" , _on_deployable_deployed)
 
 func build(deployable):
 	preview_active = true
