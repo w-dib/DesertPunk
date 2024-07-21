@@ -1,12 +1,14 @@
 extends CanvasLayer
 
 signal deployable_passed(deployable : DeployableResource)
+signal day_advanced
 
 @export var build_bar: PanelContainer
 @export var barley_button: Button
 @export var dates_button: Button
 @export var goat_button: Button
 @export var camel_button: Button
+@export var end_day_button: Button
 
 @export var barley_resource : Growable 
 @export var dates_resource : Growable
@@ -25,6 +27,7 @@ func _ready() -> void:
 	dates_button.pressed.connect(handle_action_bar_press.bind(dates_button))
 	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
 	camel_button.pressed.connect(handle_action_bar_press.bind(camel_button))
+	end_day_button.pressed.connect(handle_action_bar_press.bind(end_day_button))
 	
 func _process(delta: float) -> void:
 	calendar_text.text = str(DataManager.calendar)
@@ -44,9 +47,15 @@ func handle_action_bar_press(button_pressed) -> void:
 			print("goat")
 		camel_button:
 			print("camel")
+		end_day_button:
+			end_day()
 
 func _on_hammer_button_toggled(_toggled_on: bool) -> void:
 	build_bar.visible = !build_bar.visible
 
 func deploy(resource):
 	deployable_passed.emit(resource)
+
+func end_day():
+	DataManager.calendar += 1
+	emit_signal("day_advanced")

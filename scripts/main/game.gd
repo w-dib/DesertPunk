@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var tiles: Node = $Tiles
+@onready var ui: CanvasLayer = $UI
 
 @export var hover_mouse: AnimatedSprite2D
 @export var tile_map: TileMap
@@ -9,6 +10,11 @@ var current_deployable : DeployableResource = null
 var preview_active := false
 var deployable_component : Node2D
 var preview_scene : Node2D
+
+func _ready() -> void:
+	ui.deployable_passed.connect(_on_ui_deployable_passed)
+	ui.day_advanced.connect(_on_day_advanced)
+	pass
 
 func _process(_delta: float) -> void:
 	if !preview_active:
@@ -49,3 +55,6 @@ func build(deployable):
 	preview_scene.add_to_group("preview_tile")
 	deployable_component = preview_scene.get_node("DeployableComponent")
 	deployable_component.deployable_deployed.connect(_on_deployable_deployed)
+
+func _on_day_advanced():
+	DataManager.water = 10

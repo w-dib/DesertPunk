@@ -393,5 +393,3 @@ layer_3/tile_data = PackedInt32Array()
 [node name="UI" parent="." instance=ExtResource("6_dhwtt")]
 
 [node name="Tiles" type="Node" parent="."]
-
-[connection signal="deployable_passed" from="UI" to="." method="_on_ui_deployable_passed"]

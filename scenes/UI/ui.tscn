@@ -28,13 +28,14 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("7_5ie6m")
 region = Rect2(0, 0, 16, 16)
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "end_day_button")]
 script = ExtResource("1_fdw0t")
 build_bar = NodePath("ActionBarControl/BuildBar")
 barley_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/BarleyButton")
 dates_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/DatesButton")
 goat_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/GoatButton")
 camel_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/CamelButton")
+end_day_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/EndDay")
 barley_resource = ExtResource("2_ugbnq")
 dates_resource = ExtResource("3_yj0vm")
 goat_resource = ExtResource("4_oyjvt")
