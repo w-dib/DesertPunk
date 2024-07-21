@@ -21,19 +21,23 @@ resource = ExtResource("2_x16n5")
 shape = SubResource("RectangleShape2D_rompp")
 
 [node name="1" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
 texture = ExtResource("1_cnd1s")
 
 [node name="2" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 0, 0.270588, 1)
+scale = Vector2(3, 3)
 texture = ExtResource("1_cnd1s")
 
 [node name="3" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(3, 3)
 texture = ExtResource("1_cnd1s")
 
 [node name="4" type="Sprite2D" parent="."]
 visible = false
+scale = Vector2(3, 3)
 texture = ExtResource("1_cnd1s")
 
 [node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
