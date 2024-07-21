@@ -10,8 +10,12 @@ growth_time = 2
 only_grows_on_action = true
 needs_daily_watering_to_grow = true
 needs_nearby_plants_to_grow = false
+tile_type = 0
 can_be_free_tile = false
 costs_action_to_deply = true
 tile_map_source = 8
 tile_map_coordinates = Vector2i(0, 0)
+descriptor_text = "Needs 2 days to grow.
+Must be Watered Every day.
+Sells for 2 coins"
 deployable_scene = "res://scenes/deployables/plants/barley.tscn"

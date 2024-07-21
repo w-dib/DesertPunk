@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cqu2iss2l2sym"]
+[gd_scene load_steps=26 format=3 uid="uid://cqu2iss2l2sym"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="7_nldxv"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/PasturingSheepIdleSide.png" id="8_c46ho"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="8_vufiq"]
+[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="14_3aqaw"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="14_yyn2l"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="15_hhqkg"]
 
@@ -361,6 +362,23 @@ sources/6 = SubResource("TileSetAtlasSource_ro4n0")
 sources/7 = SubResource("TileSetAtlasSource_gf01t")
 sources/8 = SubResource("TileSetAtlasSource_7pe2t")
 
+[sub_resource type="Resource" id="Resource_2j4is"]
+resource_local_to_scene = true
+script = ExtResource("14_3aqaw")
+name = "Camel"
+sells_for = 15
+growth_time = 5
+only_grows_on_action = false
+needs_daily_watering_to_grow = false
+needs_nearby_plants_to_grow = true
+tile_type = 0
+can_be_free_tile = false
+costs_action_to_deply = true
+tile_map_source = 0
+tile_map_coordinates = Vector2i(0, 0)
+descriptor_text = ""
+deployable_scene = ""
+
 [node name="Game" type="Node2D" node_paths=PackedStringArray("hover_mouse", "tile_map")]
 script = ExtResource("1_kfgdk")
 hover_mouse = NodePath("HoverMouse")
@@ -391,5 +409,6 @@ layer_3/name = "deployable"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="UI" parent="." instance=ExtResource("6_dhwtt")]
+camel_resource = SubResource("Resource_2j4is")
 
 [node name="Tiles" type="Node" parent="."]

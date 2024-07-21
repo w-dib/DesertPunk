@@ -20,6 +20,8 @@ func _input(event):
 		if can_build(tile_map_position) && DataManager.water != 0:
 			deployable_deployed.emit()
 			has_built = true
+			print(parent_building.has_built)
+			parent_building.has_built = has_built
 			queue_redraw()
 
 func _process(_delta):

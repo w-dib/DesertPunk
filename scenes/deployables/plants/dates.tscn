@@ -1,22 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://mrei8i4gf6be"]
+[gd_scene load_steps=3 format=3 uid="uid://sc34ck6u43a1"]
 
-[ext_resource type="Texture2D" uid="uid://btyigwgbyd20h" path="res://temp/Group 7.png" id="1_d2nxr"]
-[ext_resource type="Script" path="res://components/deployable_component.gd" id="2_x7043"]
+[ext_resource type="PackedScene" uid="uid://61hatnndn2fc" path="res://scenes/deployables/plants/base_plant.tscn" id="1_dpowy"]
+[ext_resource type="Resource" uid="uid://x56371fy2cmy" path="res://resources/plants/dates.tres" id="2_h1ko4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7dg4"]
-size = Vector2(48, 48)
+[node name="Dates" instance=ExtResource("1_dpowy")]
+resource = ExtResource("2_h1ko4")
 
-[node name="Dates" type="Area2D"]
-collision_layer = 2
-collision_mask = 3
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.92549, 0.447059, 0.870588, 1)
-texture = ExtResource("1_d2nxr")
-
-[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
-script = ExtResource("2_x7043")
-parent_building = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_y7dg4")
+[node name="StageOne" parent="." index="1"]
+modulate = Color(0.282353, 0, 0.282353, 1)

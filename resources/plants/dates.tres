@@ -10,8 +10,12 @@ growth_time = 8
 only_grows_on_action = true
 needs_daily_watering_to_grow = false
 needs_nearby_plants_to_grow = false
+tile_type = 0
 can_be_free_tile = false
 costs_action_to_deply = false
 tile_map_source = 0
 tile_map_coordinates = Vector2i(0, 0)
+descriptor_text = "Needs 8 days to grow.
+Does not  need to be watered.
+Sells for 10 coins."
 deployable_scene = "res://scenes/deployables/plants/dates.tscn"
