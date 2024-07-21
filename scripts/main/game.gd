@@ -26,7 +26,19 @@ func _input(event):
 			get_tree().get_first_node_in_group("preview_tile").queue_free()
 
 func _on_ui_deployable_passed(deployable: DeployableResource) -> void:
-	if !preview_active:
+	if preview_active:
+		get_tree().get_first_node_in_group("preview_tile").queue_free()
+		build(deployable)
+	else:
+		build(deployable)
+
+func _on_deployable_deployed() -> void:
+	preview_scene.remove_from_group("preview_tile")
+	preview_scene.add_to_group("deployed_tiles")
+	preview_active = false
+	current_deployable = null
+
+func build(deployable):
 		preview_active = true
 		current_deployable = deployable
 		preview_scene = load(current_deployable.deployable_scene).instantiate()
@@ -34,9 +46,3 @@ func _on_ui_deployable_passed(deployable: DeployableResource) -> void:
 		preview_scene.add_to_group("preview_tile")
 		deployable_component = preview_scene.get_node("DeployableComponent")
 		deployable_component.deployable_deployed.connect(_on_deployable_deployed)
-
-func _on_deployable_deployed() -> void:
-	preview_scene.remove_from_group("preview_tile")
-	preview_scene.add_to_group("deployed_tiles")
-	preview_active = false
-	current_deployable = null
