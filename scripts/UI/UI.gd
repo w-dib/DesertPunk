@@ -26,15 +26,14 @@ func _ready() -> void:
 	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
 	camel_button.pressed.connect(handle_action_bar_press.bind(camel_button))
 	
+func _process(delta: float) -> void:
 	calendar_text.text = str(DataManager.calendar)
 	coin_text.text = str(DataManager.coins)
 	wood_text.text = str(DataManager.wood)
 	stone_text.text = str(DataManager.stone)
 	water_text.text = str(DataManager.water) + " / 10"
 	progress_bar.value = DataManager.water
-	
-	
-
+		
 func handle_action_bar_press(button_pressed) -> void:
 	match button_pressed:
 		barley_button:

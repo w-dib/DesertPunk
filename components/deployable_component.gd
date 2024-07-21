@@ -17,7 +17,7 @@ signal deployable_deployed
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		if can_build(tile_map_position):
+		if can_build(tile_map_position) && DataManager.water != 0:
 			deployable_deployed.emit()
 			has_built = true
 			queue_redraw()
