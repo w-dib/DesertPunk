@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtyot2q1k03fv"
-path="res://.godot/imported/PixelFarm_Crops.png-bc2f9fc35473fd907b36922b5515d776.ctex"
+path="res://.godot/imported/PixelFarm_Crops.png-6c127f791bd13c77991d734967650ecd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://temp/Pixel Farm_Assets/PixelFarm_Crops.png"
-dest_files=["res://.godot/imported/PixelFarm_Crops.png-bc2f9fc35473fd907b36922b5515d776.ctex"]
+source_file="res://assets/tile_maps/PixelFarm_Crops.png"
+dest_files=["res://.godot/imported/PixelFarm_Crops.png-6c127f791bd13c77991d734967650ecd.ctex"]
 
 [params]
 

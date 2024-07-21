@@ -6,7 +6,7 @@
 script = ExtResource("1_h551s")
 name = "Barley"
 sells_for = 2
-growth_time = 2
+growth_time = 4
 only_grows_on_action = true
 needs_daily_watering_to_grow = true
 needs_nearby_plants_to_grow = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbe18yvclsqk5"
-path="res://.godot/imported/GrazingCowIdleSide.png-7b294d0703b1b093e81ca18adf7e146f.ctex"
+uid="uid://bok213me2v2io"
+path="res://.godot/imported/PasturingSheepIdleSide.png-dfaa84d3e79077eb81eb9ec5d7e561c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GrazingCowIdleSide.png"
-dest_files=["res://.godot/imported/GrazingCowIdleSide.png-7b294d0703b1b093e81ca18adf7e146f.ctex"]
+source_file="res://assets/tile_maps/PasturingSheepIdleSide.png"
+dest_files=["res://.godot/imported/PasturingSheepIdleSide.png-dfaa84d3e79077eb81eb9ec5d7e561c8.ctex"]
 
 [params]
 

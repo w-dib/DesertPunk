@@ -20,15 +20,19 @@ resource = ExtResource("2_x16n5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rompp")
 
-[node name="StageOne" type="Sprite2D" parent="."]
+[node name="1" type="Sprite2D" parent="."]
 texture = ExtResource("1_cnd1s")
 
-[node name="StageTwo" type="Sprite2D" parent="."]
+[node name="2" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 0, 0.270588, 1)
 texture = ExtResource("1_cnd1s")
 
-[node name="StageThree" type="Sprite2D" parent="."]
+[node name="3" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_cnd1s")
+
+[node name="4" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("1_cnd1s")
 

@@ -6,7 +6,7 @@
 script = ExtResource("1_inwsk")
 name = "Dates"
 sells_for = 10
-growth_time = 8
+growth_time = 4
 only_grows_on_action = true
 needs_daily_watering_to_grow = false
 needs_nearby_plants_to_grow = false
