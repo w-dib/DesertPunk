@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://61hatnndn2fc" path="res://scenes/deployables/plants/base_plant.tscn" id="1_4s2fk"]
 
 [node name="Barley" instance=ExtResource("1_4s2fk")]
+
+[node name="DescriptorUI" parent="." index="5"]
+process_mode = 4

@@ -15,3 +15,6 @@ enum TileType {
 @export var tile_map_coordinates : Vector2i
 @export_multiline var descriptor_text: String
 @export_file("*.tscn") var deployable_scene: String
+
+func action():
+	print("update the action here")

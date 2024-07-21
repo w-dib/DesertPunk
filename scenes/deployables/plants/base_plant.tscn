@@ -37,6 +37,7 @@ script = ExtResource("2_srx63")
 parent_building = NodePath("..")
 
 [node name="DescriptorUI" type="Control" parent="."]
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -70,5 +71,6 @@ text = "Node text"
 vertical_alignment = 1
 autowrap_mode = 2
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
