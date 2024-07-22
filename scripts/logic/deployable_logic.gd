@@ -28,7 +28,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			advance_sprite()
 
 func advance_sprite():
-	if current_sprite_index < resource.growth_time:
+	if current_sprite_index < resource.growth_time && DataManager.water > 0:
 		hide_sprite(current_sprite_index)
 		current_sprite_index += 1
 		show_sprite(current_sprite_index)

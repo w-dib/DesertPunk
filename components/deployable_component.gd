@@ -17,8 +17,12 @@ signal deployable_deployed
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		if can_build(tile_map_position) && DataManager.water != 0:
-			#pay_cost()
+		var can_afford_resources = true
+		if parent_building.is_in_group("building"):
+			can_afford_resources = can_afford()
+		
+		if can_build(tile_map_position) and DataManager.water > 0 and can_afford_resources:
+			pay_cost()
 			deployable_deployed.emit()
 			has_built = true
 			parent_building.has_built = has_built
@@ -68,12 +72,12 @@ func get_all_surrounding_cells(middle_cell):
 				surrounding_cells.append(target_cell)
 	return surrounding_cells
 
-#func pay_cost() -> void:
-	#if DataManager.wood > 0:
-		#DataManager.wood - parent_building.resource.cost_wood
-	##if DataManager.cloth > 0:
-		##DataManager.cloth - resource.cost_cloth
-	#if DataManager.stone > 0:
-		#DataManager.stone - parent_building.resource.cost_stone
-	#if DataManager.water > 0:
-		#DataManager.water -= 1
+func pay_cost() -> void:
+	if parent_building.is_in_group("building"):
+			DataManager.wood -= parent_building.resource.cost_wood
+			DataManager.stone -= parent_building.resource.cost_stone
+
+func can_afford() -> bool:
+	if parent_building.is_in_group("building"):
+		return DataManager.wood >= parent_building.resource.cost_wood && DataManager.stone >= parent_building.resource.cost_stone
+	return false
