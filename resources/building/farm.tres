@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Building" load_steps=2 format=3 uid="uid://btmxe2fvo0y8b"]
+
+[ext_resource type="Script" path="res://scripts/resource_base/building.gd" id="1_yxs2b"]
+
+[resource]
+script = ExtResource("1_yxs2b")
+name = "Farm"
+cost_wood = 1
+cost_stone = 0
+cost_cloth = 0
+tile_type = 1
+can_be_free_tile = true
+costs_action_to_deply = true
+tile_map_source = 0
+tile_map_coordinates = Vector2i(0, 0)
+descriptor_text = "Grows animals over time.
+Animals feed on plants."
+deployable_scene = "res://scenes/deployables/buildings/farm.tscn"

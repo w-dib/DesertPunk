@@ -9,9 +9,9 @@ var coins : int = 10 :
 var water : int = 10 :
 	set(new_value):
 		water = new_value
-var wood : int = 0 :
+var wood : int = 3 :
 	set(new_value):
 		wood = new_value
-var stone : int = 0 :
+var stone : int = 1 :
 	set(new_value):
 		stone = new_value

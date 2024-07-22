@@ -4,7 +4,6 @@ extends Area2D
 @export var descriptor_ui: Control
 @export var resource: DeployableResource
 
-
 var has_built = false
 var first_click = true
 var current_sprite_index : int = 1
@@ -21,7 +20,7 @@ func _on_mouse_exited() -> void:
 	if has_built:
 		descriptor_ui.hide()
 
-func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("interact") && has_built:
 		if first_click:
 			first_click = false

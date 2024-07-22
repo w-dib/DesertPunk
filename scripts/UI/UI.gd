@@ -4,10 +4,14 @@ signal deployable_passed(deployable : DeployableResource)
 signal day_advanced
 
 @export var build_bar: PanelContainer
+
+##building_buttons
 @export var barley_button: Button
 @export var dates_button: Button
 @export var goat_button: Button
 @export var camel_button: Button
+@export var farm_button: Button
+
 @export var end_day_button: Button
 @export var popup_panel: Control
 @export var yes_button: Button
@@ -17,6 +21,7 @@ signal day_advanced
 @export var dates_resource : Growable
 @export var goat_resource : Growable
 @export var camel_resource : Growable
+@export var farm_resource : Building
 
 
 @onready var calendar_text: Label = %CalendarText
@@ -32,11 +37,12 @@ func _ready() -> void:
 	dates_button.pressed.connect(handle_action_bar_press.bind(dates_button))
 	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
 	camel_button.pressed.connect(handle_action_bar_press.bind(camel_button))
+	farm_button.pressed.connect(handle_action_bar_press.bind(farm_button))
 	end_day_button.pressed.connect(handle_action_bar_press.bind(end_day_button))
 	yes_button.pressed.connect(handle_action_bar_press.bind(yes_button))
 	no_button.pressed.connect(handle_action_bar_press.bind(no_button))
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	calendar_text.text = str(DataManager.calendar)
 	coin_text.text = str(DataManager.coins)
 	wood_text.text = str(DataManager.wood)
@@ -54,6 +60,8 @@ func handle_action_bar_press(button_pressed) -> void:
 			print("goat")
 		camel_button:
 			print("camel")
+		farm_button:
+			deploy(farm_resource)
 		end_day_button:
 			check_end_day()
 		yes_button:

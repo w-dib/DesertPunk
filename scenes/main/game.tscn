@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cqu2iss2l2sym"]
+[gd_scene load_steps=23 format=3 uid="uid://cqu2iss2l2sym"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
 [ext_resource type="Texture2D" uid="uid://du06h3to3htwg" path="res://assets/tile_maps/desertdoodles.png" id="2_vcnjb"]
-[ext_resource type="PackedScene" uid="uid://by6xvmymft6dw" path="res://scenes/UI/hover_mouse.tscn" id="3_c0fkh"]
 [ext_resource type="Texture2D" uid="uid://qmfb7ejyjmo5" path="res://assets/tile_maps/DesertTilemap16x16.png" id="5_rf0fu"]
 [ext_resource type="Texture2D" uid="uid://b34253l2qn71t" path="res://assets/tile_maps/DesertTilemapBlankBackground.png" id="6_5d38u"]
 [ext_resource type="PackedScene" uid="uid://noaelpdlywqs" path="res://scenes/UI/ui.tscn" id="6_dhwtt"]
@@ -11,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="7_nldxv"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/tile_maps/PasturingSheepIdleSide.png" id="8_c46ho"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="8_vufiq"]
-[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="14_3aqaw"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="14_yyn2l"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="15_hhqkg"]
 
@@ -362,36 +360,13 @@ sources/6 = SubResource("TileSetAtlasSource_ro4n0")
 sources/7 = SubResource("TileSetAtlasSource_gf01t")
 sources/8 = SubResource("TileSetAtlasSource_7pe2t")
 
-[sub_resource type="Resource" id="Resource_2j4is"]
-resource_local_to_scene = true
-script = ExtResource("14_3aqaw")
-name = "Camel"
-sells_for = 15
-growth_time = 5
-only_grows_on_action = false
-needs_daily_watering_to_grow = false
-needs_nearby_plants_to_grow = true
-tile_type = 0
-can_be_free_tile = false
-costs_action_to_deply = true
-tile_map_source = 0
-tile_map_coordinates = Vector2i(0, 0)
-descriptor_text = ""
-deployable_scene = ""
-
-[node name="Game" type="Node2D" node_paths=PackedStringArray("hover_mouse", "tile_map")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("tile_map")]
 script = ExtResource("1_kfgdk")
-hover_mouse = NodePath("HoverMouse")
 tile_map = NodePath("World/TileMap")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
 script = ExtResource("2_jf6k2")
-
-[node name="HoverMouse" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("3_c0fkh")]
-visible = false
-z_index = 4
-tile_map = NodePath("../World/TileMap")
 
 [node name="World" type="Node2D" parent="."]
 
@@ -409,6 +384,6 @@ layer_3/name = "deployable"
 layer_3/tile_data = PackedInt32Array()
 
 [node name="UI" parent="." instance=ExtResource("6_dhwtt")]
-camel_resource = SubResource("Resource_2j4is")
+camel_resource = null
 
 [node name="Tiles" type="Node" parent="."]

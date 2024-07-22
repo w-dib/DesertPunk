@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://noaelpdlywqs"]
+[gd_scene load_steps=24 format=3 uid="uid://noaelpdlywqs"]
 
 [ext_resource type="Script" path="res://scripts/UI/UI.gd" id="1_fdw0t"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="2_qxfbr"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="4_wvrwy"]
 [ext_resource type="Resource" uid="uid://s4cgle27sbwl" path="res://resources/animals/camel.tres" id="5_jplgw"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="5_xvnit"]
+[ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="6_66q4k"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/tile_maps/PasturingSheepIdleSide.png" id="6_wadh2"]
 [ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/tile_maps/GrazingCowIdleSide.png" id="7_5ie6m"]
+[ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="7_ubmeb"]
 [ext_resource type="Texture2D" uid="uid://dakn3r5jsi667" path="res://assets/icons/hammer.png" id="8_ktomk"]
 [ext_resource type="Texture2D" uid="uid://cm8xai6eqofem" path="res://assets/icons/candle.png" id="9_va0er"]
 [ext_resource type="Texture2D" uid="uid://cgfrsvhr04qgo" path="res://assets/icons/calendar.png" id="10_icg0r"]
@@ -28,13 +30,14 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("7_5ie6m")
 region = Rect2(0, 0, 16, 16)
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "end_day_button", "popup_panel", "yes_button", "no_button")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "farm_button", "end_day_button", "popup_panel", "yes_button", "no_button")]
 script = ExtResource("1_fdw0t")
 build_bar = NodePath("ActionBarControl/BuildBar")
 barley_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/BarleyButton")
 dates_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/DatesButton")
 goat_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/GoatButton")
 camel_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/CamelButton")
+farm_button = NodePath("ActionBarControl/BuildBar/MarginContainer/BuildMenu/FarmButton")
 end_day_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/EndDay")
 popup_panel = NodePath("PopupPanel")
 yes_button = NodePath("PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/YesButton")
@@ -43,6 +46,7 @@ barley_resource = ExtResource("2_ugbnq")
 dates_resource = ExtResource("3_yj0vm")
 goat_resource = ExtResource("4_oyjvt")
 camel_resource = ExtResource("5_jplgw")
+farm_resource = ExtResource("6_66q4k")
 
 [node name="ActionBarControl" type="Control" parent="."]
 custom_minimum_size = Vector2(640, 95)
@@ -77,9 +81,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 columns = 10
 
-[node name="Button" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
+[node name="FarmButton" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
+icon = ExtResource("7_ubmeb")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Button2" type="Button" parent="ActionBarControl/BuildBar/MarginContainer/BuildMenu"]
 custom_minimum_size = Vector2(32, 32)
@@ -405,6 +412,7 @@ theme = ExtResource("2_qxfbr")
 text = "free tile"
 
 [node name="PopupPanel" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

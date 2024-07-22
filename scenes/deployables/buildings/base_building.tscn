@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://luhukhrak7ou"]
+
+[ext_resource type="Script" path="res://scripts/logic/building_logic.gd" id="1_cu5or"]
+[ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="2_632ty"]
+[ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="2_peprd"]
+[ext_resource type="Script" path="res://components/deployable_component.gd" id="4_3033j"]
+[ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="5_at15n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rompp"]
+size = Vector2(48, 48)
+
+[node name="Building" type="Area2D" node_paths=PackedStringArray("descriptor_text", "descriptor_ui")]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_cu5or")
+descriptor_text = NodePath("DescriptorUI/PanelContainer/MarginContainer/DescriptorText")
+descriptor_ui = NodePath("DescriptorUI")
+resource = ExtResource("2_peprd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rompp")
+
+[node name="1" type="Sprite2D" parent="."]
+texture = ExtResource("2_632ty")
+
+[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
+script = ExtResource("4_3033j")
+parent_building = NodePath("..")
+
+[node name="DescriptorUI" type="Control" parent="."]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 140.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_at15n")
+
+[node name="PanelContainer" type="PanelContainer" parent="DescriptorUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DescriptorUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DescriptorText" type="Label" parent="DescriptorUI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Node text"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
