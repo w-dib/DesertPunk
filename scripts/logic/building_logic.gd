@@ -2,7 +2,7 @@ extends Area2D
 
 @export var descriptor_text: Label
 @export var descriptor_ui: Control
-@export var resource: DeployableResource
+@export var resource: Building
 
 var has_built = false
 var first_click = true

@@ -37,10 +37,8 @@ func advance_sprite():
 		
 func hide_sprite(index):
 	var node = find_child(str(index))
-	print(node)
 	node.hide()
 
 func show_sprite(index):
 	var node = find_child(str(index))
-	print("second" + str(node))
 	node.show()

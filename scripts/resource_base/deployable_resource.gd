@@ -17,4 +17,4 @@ enum TileType {
 @export_file("*.tscn") var deployable_scene: String
 
 func action():
-	print("update the action here")
+		print("update the action here")
