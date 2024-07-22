@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/UI/UI.gd" id="1_fdw0t"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="2_qxfbr"]
 [ext_resource type="Resource" uid="uid://bcbhd2t5dslxw" path="res://resources/plants/barley.tres" id="2_ugbnq"]
-[ext_resource type="Texture2D" uid="uid://cg4kq6q07jho" path="res://temp/UI/mark_question.png" id="3_u2js7"]
 [ext_resource type="Resource" uid="uid://x56371fy2cmy" path="res://resources/plants/dates.tres" id="3_yj0vm"]
 [ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="4_oyjvt"]
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="4_wvrwy"]
@@ -14,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/tile_maps/GrazingCowIdleSide.png" id="7_5ie6m"]
 [ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="7_ubmeb"]
 [ext_resource type="Texture2D" uid="uid://dakn3r5jsi667" path="res://assets/icons/hammer.png" id="8_ktomk"]
+[ext_resource type="Texture2D" uid="uid://bmkska6gxxf1c" path="res://assets/icons/mark_question.svg" id="9_ervdb"]
 [ext_resource type="Texture2D" uid="uid://cm8xai6eqofem" path="res://assets/icons/candle.png" id="9_va0er"]
 [ext_resource type="Texture2D" uid="uid://cgfrsvhr04qgo" path="res://assets/icons/calendar.png" id="10_icg0r"]
 [ext_resource type="Texture2D" uid="uid://d32qiepekicqr" path="res://assets/icons/water.png" id="11_3ont5"]
@@ -142,7 +142,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-icon = ExtResource("3_u2js7")
+icon = ExtResource("9_ervdb")
 expand_icon = true
 
 [node name="ButtonContainer" type="HBoxContainer" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer"]
