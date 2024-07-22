@@ -9,7 +9,6 @@
 [ext_resource type="Resource" uid="uid://s4cgle27sbwl" path="res://resources/animals/camel.tres" id="5_jplgw"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="5_xvnit"]
 [ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="6_66q4k"]
-[ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/tile_maps/PasturingSheepIdleSide.png" id="6_wadh2"]
 [ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/tile_maps/GrazingCowIdleSide.png" id="7_5ie6m"]
 [ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="7_ubmeb"]
 [ext_resource type="Texture2D" uid="uid://dakn3r5jsi667" path="res://assets/icons/hammer.png" id="8_ktomk"]
@@ -17,13 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://cm8xai6eqofem" path="res://assets/icons/candle.png" id="9_va0er"]
 [ext_resource type="Texture2D" uid="uid://cgfrsvhr04qgo" path="res://assets/icons/calendar.png" id="10_icg0r"]
 [ext_resource type="Texture2D" uid="uid://d32qiepekicqr" path="res://assets/icons/water.png" id="11_3ont5"]
+[ext_resource type="Texture2D" uid="uid://po6hbdrqokdq" path="res://assets/tile_maps/NibblingGoatIdleSide.png" id="12_1jhtv"]
 [ext_resource type="Texture2D" uid="uid://b5r6tj5emuex8" path="res://assets/icons/coin.png" id="12_6ohtf"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="13_hggv1"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="14_yh67f"]
 [ext_resource type="Texture2D" uid="uid://ccmxikhuq66vy" path="res://assets/icons/unlock.png" id="15_aia5v"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7iqwr"]
-atlas = ExtResource("6_wadh2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_14eki"]
+atlas = ExtResource("12_1jhtv")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bah3k"]
@@ -176,7 +176,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-icon = SubResource("AtlasTexture_7iqwr")
+icon = SubResource("AtlasTexture_14eki")
 expand_icon = true
 
 [node name="CamelButton" type="Button" parent="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer"]

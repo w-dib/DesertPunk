@@ -17,4 +17,4 @@ costs_action_to_deply = true
 tile_map_source = 0
 tile_map_coordinates = Vector2i(0, 0)
 descriptor_text = ""
-deployable_scene = ""
+deployable_scene = "res://scenes/deployables/animals/base_animal.tscn"

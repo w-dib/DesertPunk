@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c75eruthvm370"]
+[gd_scene load_steps=2 format=3 uid="uid://c75eruthvm370"]
 
 [ext_resource type="PackedScene" uid="uid://luhukhrak7ou" path="res://scenes/deployables/buildings/base_building.tscn" id="1_858qp"]
-[ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="3_elly1"]
 
 [node name="Farm" instance=ExtResource("1_858qp")]
-default_cursor = ExtResource("3_elly1")
 
 [node name="1" parent="." index="1"]
 offset = Vector2(0, -8)

@@ -57,7 +57,7 @@ func handle_action_bar_press(button_pressed) -> void:
 		dates_button:
 			deploy(dates_resource)
 		goat_button:
-			print("goat")
+			deploy(goat_resource)
 		camel_button:
 			print("camel")
 		farm_button:

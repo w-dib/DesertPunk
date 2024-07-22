@@ -12,6 +12,7 @@ class_name DeployableComponent
 @export var parent_building : Area2D
 
 var has_built = false
+var deploying_in_farm = false
 
 signal deployable_deployed
 
@@ -22,14 +23,18 @@ func _input(event):
 			can_afford_resources = can_afford()
 		
 		if can_build(tile_map_position) and DataManager.water > 0 and can_afford_resources:
+			if parent_building.is_in_group("animal"):
+				if not deploying_in_farm:
+					return  # Exit early if deploying_in_farm is false
 			pay_cost()
 			deployable_deployed.emit()
 			has_built = true
 			parent_building.has_built = has_built
 			queue_redraw()
 
+
 func _process(_delta):
-	
+	check_for_farm()
 	mouse_position = get_global_mouse_position()
 	tile_map_position = tile_map.local_to_map(mouse_position)
 	
@@ -81,3 +86,22 @@ func can_afford() -> bool:
 	if parent_building.is_in_group("building"):
 		return DataManager.wood >= parent_building.resource.cost_wood && DataManager.stone >= parent_building.resource.cost_stone
 	return false
+
+func check_for_farm() -> bool:
+	if parent_building.is_in_group("animal") && !has_built:
+		var can_build = []
+		var query_rect = RectangleShape2D.new()
+		parent_building.global_position = get_global_mouse_position()
+		building_area.position = -(building_area.size/2)
+		var space = get_world_2d().direct_space_state
+		query_rect.extents = abs(building_area.size)/2
+		var q = PhysicsShapeQueryParameters2D.new()
+		q.shape = query_rect
+		q.collision_mask = 3 # building layer
+		q.transform = Transform2D(0,get_global_mouse_position())
+		can_build = space.intersect_shape(q)
+		queue_redraw()
+		if can_build.size() == 0:
+			return true
+		else: return  false
+	else: return false

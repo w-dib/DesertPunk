@@ -1,0 +1,114 @@
+[gd_scene load_steps=15 format=3 uid="uid://443ygjfgmy2p"]
+
+[ext_resource type="Script" path="res://scripts/logic/animal_logic.gd" id="1_uyo40"]
+[ext_resource type="Resource" uid="uid://s4cgle27sbwl" path="res://resources/animals/camel.tres" id="2_146lw"]
+[ext_resource type="Texture2D" uid="uid://b811ishty1380" path="res://assets/icons/hand_point.svg" id="3_d5733"]
+[ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="4_s7pia"]
+[ext_resource type="Texture2D" uid="uid://btyigwgbyd20h" path="res://temp/Group 7.png" id="5_gyc57"]
+[ext_resource type="Texture2D" uid="uid://po6hbdrqokdq" path="res://assets/tile_maps/NibblingGoatIdleSide.png" id="5_hltot"]
+[ext_resource type="Script" path="res://components/deployable_component.gd" id="6_f3jq0"]
+[ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="7_f4tl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rompp"]
+size = Vector2(48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jggu"]
+atlas = ExtResource("5_hltot")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blb68"]
+atlas = ExtResource("5_hltot")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxq25"]
+atlas = ExtResource("5_hltot")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2ylb"]
+atlas = ExtResource("5_hltot")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cft57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jggu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blb68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxq25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2ylb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Animal" type="Area2D" groups=["animal"]]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_uyo40")
+resource = ExtResource("2_146lw")
+custom_cursor = ExtResource("3_d5733")
+default_cursor = ExtResource("4_s7pia")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rompp")
+
+[node name="1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cft57")
+autoplay = "default"
+frame_progress = 0.773672
+
+[node name="2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0.501961, 0.25098, 0.607843)
+scale = Vector2(3, 3)
+texture = ExtResource("5_gyc57")
+
+[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
+script = ExtResource("6_f3jq0")
+parent_building = NodePath("..")
+
+[node name="DescriptorUI" type="Control" parent="."]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 140.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_f4tl8")
+
+[node name="PanelContainer" type="PanelContainer" parent="DescriptorUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DescriptorUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DescriptorText" type="Label" parent="DescriptorUI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Node text"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -43,8 +43,9 @@ cancel={
 
 [layer_names]
 
-2d_physics/layer_2="Deployables"
+2d_physics/layer_2="Plants"
 2d_physics/layer_3="Buildings"
+2d_physics/layer_4="Animals"
 
 [rendering]
 
