@@ -23,10 +23,12 @@ func _input(event):
 			can_afford_resources = can_afford()
 		
 		if can_build(tile_map_position) and DataManager.water > 0 and can_afford_resources:
+			print(parent_building)
 			if parent_building.is_in_group("animal"):
 				if not deploying_in_farm:
-					print("not in farm")
 					return  # Exit early if deploying_in_farm is false
+				if deploying_in_farm:
+					print("trying to deploy" + str(parent_building))
 			pay_cost()
 			deployable_deployed.emit()
 			has_built = true
@@ -48,8 +50,8 @@ func _draw():
 		if parent_building.is_in_group("animal"):
 			if not deploying_in_farm:
 				draw_rect(building_area,Color(1,0,0,.5))
-		elif deploying_in_farm:
-			draw_rect(building_area, Color(0,1,0,.5))
+			elif deploying_in_farm:
+				draw_rect(building_area, Color(0,1,0,.5))
 	elif !has_built:
 		draw_rect(building_area,Color(1,0,0,.5))
 	else:
@@ -67,8 +69,13 @@ func can_build(cell_position: Vector2i) -> bool:
 			return false
 	# Check for overlapping bodies
 	if parent_building.has_overlapping_areas():
+		if parent_building.is_in_group("animal"):
+			var check_for_farm = parent_building.get_overlapping_areas()
+			for area in check_for_farm:
+				if area.is_in_group("building"):
+					print("got it")
+					return true
 		return false
-		
 	return true
 	
 func get_all_surrounding_cells(middle_cell):
@@ -91,21 +98,5 @@ func can_afford() -> bool:
 		return DataManager.wood >= parent_building.resource.cost_wood && DataManager.stone >= parent_building.resource.cost_stone
 	return false
 
-#func check_for_farm() -> bool:
-	#if parent_building.is_in_group("animal") && !has_built:
-		#var can_build = []
-		#var query_rect = RectangleShape2D.new()
-		#parent_building.global_position = get_global_mouse_position()
-		#building_area.position = -(building_area.size/2)
-		#var space = get_world_2d().direct_space_state
-		#query_rect.extents = abs(building_area.size)/2
-		#var q = PhysicsShapeQueryParameters2D.new()
-		#q.shape = query_rect
-		#q.collision_mask = 3 # building layer
-		#q.transform = Transform2D(0,get_global_mouse_position())
-		#can_build = space.intersect_shape(q)
-		#queue_redraw()
-		#if can_build.size() == 0:
-			#return true
-		#else: return  false
-	#else: return false
+
+

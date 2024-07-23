@@ -15,7 +15,7 @@ func _ready() -> void:
 	descriptor_ui.hide()
 	
 func _on_mouse_entered() -> void:
-	if has_built:
+	if has_built && !overlaps_with_animal:
 		descriptor_ui.show()
 		if custom_cursor:
 			Input.set_custom_mouse_cursor(custom_cursor)
