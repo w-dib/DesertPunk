@@ -9,6 +9,7 @@ extends Area2D
 var has_built = false
 var first_click = true
 var overlaps_with_animal = false
+var animal_deployed = false
 
 func _ready() -> void:
 	descriptor_text.text = resource.descriptor_text

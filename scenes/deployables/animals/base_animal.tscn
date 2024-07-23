@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://443ygjfgmy2p"]
 
 [ext_resource type="Script" path="res://scripts/logic/animal_logic.gd" id="1_uyo40"]
-[ext_resource type="Resource" uid="uid://s4cgle27sbwl" path="res://resources/animals/camel.tres" id="2_146lw"]
+[ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="2_3h1eq"]
 [ext_resource type="Texture2D" uid="uid://b811ishty1380" path="res://assets/icons/hand_point.svg" id="3_d5733"]
 [ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="4_s7pia"]
 [ext_resource type="Texture2D" uid="uid://btyigwgbyd20h" path="res://temp/Group 7.png" id="5_gyc57"]
@@ -48,11 +48,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Animal" type="Area2D" groups=["animal"]]
+[node name="Animal" type="Area2D" node_paths=PackedStringArray("descriptor_text", "descriptor_ui") groups=["animal"]]
 collision_layer = 8
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("1_uyo40")
-resource = ExtResource("2_146lw")
+descriptor_text = NodePath("DescriptorUI/PanelContainer/MarginContainer/DescriptorText")
+descriptor_ui = NodePath("DescriptorUI")
+resource = ExtResource("2_3h1eq")
 custom_cursor = ExtResource("3_d5733")
 default_cursor = ExtResource("4_s7pia")
 

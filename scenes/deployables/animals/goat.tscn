@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://6q0eiwqtkkah"]
+[gd_scene load_steps=2 format=3 uid="uid://6q0eiwqtkkah"]
 
 [ext_resource type="PackedScene" uid="uid://443ygjfgmy2p" path="res://scenes/deployables/animals/base_animal.tscn" id="1_bb0ye"]
-[ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="2_1ditg"]
 
-[node name="Goat" node_paths=PackedStringArray("descriptor_text", "descriptor_ui") instance=ExtResource("1_bb0ye")]
-descriptor_text = NodePath("DescriptorUI/PanelContainer/MarginContainer/DescriptorText")
-descriptor_ui = NodePath("DescriptorUI")
-resource = ExtResource("2_1ditg")
+[node name="Goat" instance=ExtResource("1_bb0ye")]
 
 [node name="1" parent="." index="1"]
 frame_progress = 0.954561

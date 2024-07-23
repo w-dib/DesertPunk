@@ -17,21 +17,26 @@ var deploying_in_farm = false
 signal deployable_deployed
 
 func _input(event):
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") && !has_built:
 		var can_afford_resources = true
 		if parent_building.is_in_group("building"):
 			can_afford_resources = can_afford()
 		
 		if can_build(tile_map_position) and DataManager.water > 0 and can_afford_resources:
-			print(parent_building)
 			if parent_building.is_in_group("animal"):
 				if not deploying_in_farm:
+					print(deploying_in_farm)
 					return  # Exit early if deploying_in_farm is false
 				if deploying_in_farm:
-					print("trying to deploy" + str(parent_building))
+					var check_for_previous_animal_deployment = parent_building.get_overlapping_areas()
+					for area in check_for_previous_animal_deployment:
+						if area.is_in_group("animal") && area.animal_deployed == true:
+							return
 			pay_cost()
 			deployable_deployed.emit()
 			has_built = true
+			if parent_building.is_in_group("animal"):
+				parent_building.animal_deployed = true
 			parent_building.has_built = has_built
 			queue_redraw()
 
@@ -52,6 +57,8 @@ func _draw():
 				draw_rect(building_area,Color(1,0,0,.5))
 			elif deploying_in_farm:
 				draw_rect(building_area, Color(0,1,0,.5))
+		else:
+			draw_rect(building_area, Color(0,1,0,.5))
 	elif !has_built:
 		draw_rect(building_area,Color(1,0,0,.5))
 	else:
@@ -73,7 +80,6 @@ func can_build(cell_position: Vector2i) -> bool:
 			var check_for_farm = parent_building.get_overlapping_areas()
 			for area in check_for_farm:
 				if area.is_in_group("building"):
-					print("got it")
 					return true
 		return false
 	return true
