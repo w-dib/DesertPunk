@@ -6,6 +6,8 @@ extends Area2D
 @export var custom_cursor: Texture2D
 @export var default_cursor: Texture2D
 
+@onready var deployable_component: DeployableComponent = $DeployableComponent
+
 var has_built = false
 var first_click = true
 
@@ -31,3 +33,14 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			first_click = false
 		else:
 			pass #add code to sell if animal ate food here.
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("building"):
+		print("I entered the farm")
+		deployable_component.deploying_in_farm = true
+
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.is_in_group("building"):
+		print("I exited the farm")
+		deployable_component.deploying_in_farm = false

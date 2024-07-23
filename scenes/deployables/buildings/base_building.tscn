@@ -12,7 +12,7 @@ size = Vector2(48, 48)
 
 [node name="Building" type="Area2D" node_paths=PackedStringArray("descriptor_text", "descriptor_ui") groups=["building"]]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_cu5or")
 descriptor_text = NodePath("DescriptorUI/PanelContainer/MarginContainer/DescriptorText")
 descriptor_ui = NodePath("DescriptorUI")
@@ -64,6 +64,8 @@ text = "Node text"
 vertical_alignment = 1
 autowrap_mode = 2
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
