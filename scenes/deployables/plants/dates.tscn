@@ -1,36 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://sc34ck6u43a1"]
+[gd_scene load_steps=8 format=3 uid="uid://b0h126vwrunik"]
 
-[ext_resource type="PackedScene" uid="uid://61hatnndn2fc" path="res://scenes/deployables/plants/base_plant.tscn" id="1_dpowy"]
+[ext_resource type="PackedScene" uid="uid://d304nalo4b4q4" path="res://scenes/deployables/plants/base_plant.tscn" id="1_dpowy"]
 [ext_resource type="Resource" uid="uid://x56371fy2cmy" path="res://resources/plants/dates.tres" id="2_h1ko4"]
 [ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_vhunl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lhms"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_adh7l"]
 atlas = ExtResource("3_vhunl")
-region = Rect2(16, 16, 16, 16)
+region = Rect2(16, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6cnb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvtce"]
 atlas = ExtResource("3_vhunl")
-region = Rect2(32, 16, 16, 16)
+region = Rect2(32, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_edfdi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_278yv"]
 atlas = ExtResource("3_vhunl")
-region = Rect2(48, 16, 16, 16)
+region = Rect2(48, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bqbdv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg453"]
 atlas = ExtResource("3_vhunl")
-region = Rect2(64, 16, 16, 16)
+region = Rect2(64, 48, 16, 16)
 
 [node name="Dates" instance=ExtResource("1_dpowy")]
 resource = ExtResource("2_h1ko4")
 
 [node name="1" parent="." index="1"]
-texture = SubResource("AtlasTexture_6lhms")
+texture = SubResource("AtlasTexture_adh7l")
 
 [node name="2" parent="." index="2"]
-texture = SubResource("AtlasTexture_s6cnb")
+texture = SubResource("AtlasTexture_cvtce")
 
-[node name="3" parent="." index="3"]
-texture = SubResource("AtlasTexture_edfdi")
+[node name="3" type="Sprite2D" parent="." index="3"]
+visible = false
+modulate = Color(1, 0, 0.270588, 1)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_278yv")
 
-[node name="4" parent="." index="4"]
-texture = SubResource("AtlasTexture_bqbdv")
+[node name="4" type="Sprite2D" parent="." index="4"]
+visible = false
+modulate = Color(1, 0, 0.270588, 1)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_gg453")

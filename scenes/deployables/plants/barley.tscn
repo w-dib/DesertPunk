@@ -1,37 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxoqrl2jtxmhe"]
+[gd_scene load_steps=2 format=3 uid="uid://drwx5n4legs7t"]
 
-[ext_resource type="PackedScene" uid="uid://61hatnndn2fc" path="res://scenes/deployables/plants/base_plant.tscn" id="1_4s2fk"]
-[ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="2_t0hyc"]
+[ext_resource type="PackedScene" uid="uid://d304nalo4b4q4" path="res://scenes/deployables/plants/base_plant.tscn" id="1_dn0i2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvrgf"]
-atlas = ExtResource("2_t0hyc")
-region = Rect2(16, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_85xwh"]
-atlas = ExtResource("2_t0hyc")
-region = Rect2(32, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3nkal"]
-atlas = ExtResource("2_t0hyc")
-region = Rect2(48, 32, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_emxqc"]
-atlas = ExtResource("2_t0hyc")
-region = Rect2(64, 32, 16, 16)
-
-[node name="Barley" instance=ExtResource("1_4s2fk")]
-
-[node name="1" parent="." index="1"]
-texture = SubResource("AtlasTexture_fvrgf")
-
-[node name="2" parent="." index="2"]
-texture = SubResource("AtlasTexture_85xwh")
-
-[node name="3" parent="." index="3"]
-texture = SubResource("AtlasTexture_3nkal")
-
-[node name="4" parent="." index="4"]
-texture = SubResource("AtlasTexture_emxqc")
-
-[node name="DescriptorUI" parent="." index="6"]
-process_mode = 4
+[node name="Barley" instance=ExtResource("1_dn0i2")]

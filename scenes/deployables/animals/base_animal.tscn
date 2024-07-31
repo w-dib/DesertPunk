@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://443ygjfgmy2p"]
 
-[ext_resource type="Script" path="res://scripts/logic/animal_logic.gd" id="1_uyo40"]
+[ext_resource type="Script" path="res://scripts/logic/_animal_logic.gd" id="1_uyo40"]
 [ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="2_3h1eq"]
 [ext_resource type="Texture2D" uid="uid://b811ishty1380" path="res://assets/icons/hand_point.svg" id="3_d5733"]
 [ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="4_s7pia"]
@@ -77,6 +77,7 @@ script = ExtResource("6_f3jq0")
 parent_building = NodePath("..")
 
 [node name="DescriptorUI" type="Control" parent="."]
+unique_name_in_owner = true
 z_index = 2
 layout_mode = 3
 anchors_preset = 15

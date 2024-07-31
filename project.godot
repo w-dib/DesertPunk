@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 DataManager="*res://scripts/globals/data_manager.gd"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [display]
 
 window/size/viewport_width=640
@@ -43,7 +47,8 @@ cancel={
 
 [layer_names]
 
-2d_physics/layer_2="Plants"
+2d_physics/layer_1="Foundation"
+2d_physics/layer_2="Crops"
 2d_physics/layer_3="Buildings"
 2d_physics/layer_4="Animals"
 

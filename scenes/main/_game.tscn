@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bg72apqujfmbl"]
+[gd_scene load_steps=23 format=3 uid="uid://cqu2iss2l2sym"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="7_nldxv"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/tile_maps/PasturingSheepIdleSide.png" id="8_c46ho"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="8_vufiq"]
-[ext_resource type="Script" path="res://scripts/manager_scripts/preview_manager.gd" id="13_crgm8"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="14_yyn2l"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="15_hhqkg"]
 
@@ -361,8 +360,9 @@ sources/6 = SubResource("TileSetAtlasSource_ro4n0")
 sources/7 = SubResource("TileSetAtlasSource_gf01t")
 sources/8 = SubResource("TileSetAtlasSource_7pe2t")
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("tile_map")]
 script = ExtResource("1_kfgdk")
+tile_map = NodePath("World/TileMap")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
@@ -387,7 +387,3 @@ layer_3/tile_data = PackedInt32Array()
 camel_resource = null
 
 [node name="Tiles" type="Node" parent="."]
-
-[node name="PreviewManager" type="Sprite2D" parent="."]
-scale = Vector2(3, 3)
-script = ExtResource("13_crgm8")

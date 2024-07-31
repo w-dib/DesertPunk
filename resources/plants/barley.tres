@@ -1,20 +1,25 @@
-[gd_resource type="Resource" script_class="Growable" load_steps=2 format=3 uid="uid://bcbhd2t5dslxw"]
+[gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://bcbhd2t5dslxw"]
 
-[ext_resource type="Script" path="res://scripts/resource_base/growable.gd" id="1_h551s"]
+[ext_resource type="Texture2D" uid="uid://b8o7rqfice8ma" path="res://assets/icons/tool_watering_can.svg" id="1_jfud3"]
+[ext_resource type="Script" path="res://scripts/resource_scripts/plant_resource.gd" id="2_pmfbf"]
+[ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_r07ma"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1qeu"]
+atlas = ExtResource("3_r07ma")
+region = Rect2(16, 32, 16, 16)
 
 [resource]
-script = ExtResource("1_h551s")
-name = "Barley"
+script = ExtResource("2_pmfbf")
 sells_for = 2
-growth_time = 4
+growth_time = 2
 only_grows_on_action = true
 needs_daily_watering_to_grow = true
 needs_nearby_plants_to_grow = false
-tile_type = 0
+name = "Barley"
+sprite = SubResource("AtlasTexture_p1qeu")
+hover_cursor = ExtResource("1_jfud3")
 can_be_free_tile = false
-costs_action_to_deply = true
-tile_map_source = 8
-tile_map_coordinates = Vector2i(0, 0)
+costs_action_to_deploy = false
 descriptor_text = "Needs 2 days to grow.
 Must be Watered Every day.
 Sells for 2 coins"

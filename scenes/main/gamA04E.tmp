@@ -388,6 +388,8 @@ camel_resource = null
 
 [node name="Tiles" type="Node" parent="."]
 
+[node name="InteractionManager" type="Node" parent="."]
+
 [node name="PreviewManager" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 script = ExtResource("13_crgm8")

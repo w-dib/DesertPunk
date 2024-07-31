@@ -1,54 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://61hatnndn2fc"]
+[gd_scene load_steps=8 format=3 uid="uid://d304nalo4b4q4"]
 
-[ext_resource type="Texture2D" uid="uid://btyigwgbyd20h" path="res://temp/Group 7.png" id="1_cnd1s"]
-[ext_resource type="Script" path="res://scripts/logic/deployable_logic.gd" id="1_ra0ct"]
-[ext_resource type="Script" path="res://components/deployable_component.gd" id="2_srx63"]
+[ext_resource type="Script" path="res://scripts/logic/plant_logic.gd" id="1_ucryc"]
 [ext_resource type="Resource" uid="uid://bcbhd2t5dslxw" path="res://resources/plants/barley.tres" id="2_x16n5"]
-[ext_resource type="Texture2D" uid="uid://b8o7rqfice8ma" path="res://assets/icons/tool_watering_can.svg" id="3_jhnrr"]
+[ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_4qrpn"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="4_30sov"]
-[ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="4_dd8xk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rompp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbjlx"]
 size = Vector2(48, 48)
 
-[node name="Plant" type="Area2D" node_paths=PackedStringArray("descriptor_text", "descriptor_ui")]
-collision_layer = 2
-collision_mask = 15
-script = ExtResource("1_ra0ct")
-descriptor_text = NodePath("DescriptorUI/PanelContainer/MarginContainer/DescriptorText")
-descriptor_ui = NodePath("DescriptorUI")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfas5"]
+atlas = ExtResource("3_4qrpn")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p23pp"]
+atlas = ExtResource("3_4qrpn")
+region = Rect2(48, 48, 16, 16)
+
+[node name="BasePlant" type="Area2D"]
+script = ExtResource("1_ucryc")
 resource = ExtResource("2_x16n5")
-custom_cursor = ExtResource("3_jhnrr")
-default_cursor = ExtResource("4_dd8xk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rompp")
+shape = SubResource("RectangleShape2D_lbjlx")
 
 [node name="1" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
-texture = ExtResource("1_cnd1s")
+texture = SubResource("AtlasTexture_mfas5")
 
 [node name="2" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 0, 0.270588, 1)
 scale = Vector2(3, 3)
-texture = ExtResource("1_cnd1s")
+texture = SubResource("AtlasTexture_p23pp")
 
-[node name="3" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(3, 3)
-texture = ExtResource("1_cnd1s")
-
-[node name="4" type="Sprite2D" parent="."]
-visible = false
-scale = Vector2(3, 3)
-texture = ExtResource("1_cnd1s")
-
-[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
-script = ExtResource("2_srx63")
-parent_building = NodePath("..")
+[node name="DeployableComponent" type="Node2D" parent="."]
 
 [node name="DescriptorUI" type="Control" parent="."]
+unique_name_in_owner = true
 z_index = 2
 layout_mode = 3
 anchors_preset = 15
@@ -84,5 +72,3 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

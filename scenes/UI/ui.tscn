@@ -30,7 +30,7 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("7_5ie6m")
 region = Rect2(0, 0, 16, 16)
 
-[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "farm_button", "end_day_button", "popup_panel", "yes_button", "no_button")]
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("build_bar", "barley_button", "dates_button", "goat_button", "camel_button", "farm_button", "end_day_button", "hammer_button", "popup_panel", "yes_button", "no_button")]
 script = ExtResource("1_fdw0t")
 build_bar = NodePath("ActionBarControl/BuildBar")
 barley_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/BarleyButton")
@@ -39,6 +39,7 @@ goat_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContain
 camel_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/CamelButton")
 farm_button = NodePath("ActionBarControl/BuildBar/MarginContainer/BuildMenu/FarmButton")
 end_day_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/EndDay")
+hammer_button = NodePath("ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/HammerButton")
 popup_panel = NodePath("PopupPanel")
 yes_button = NodePath("PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/YesButton")
 no_button = NodePath("PopupPanel/PanelContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/NoButton")
@@ -485,5 +486,3 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "No"
-
-[connection signal="toggled" from="ActionBarControl/ActionBar/MarginContainer/BottomContainer/ButtonContainer/HammerButton" to="." method="_on_hammer_button_toggled"]

@@ -5,24 +5,26 @@ signal day_advanced
 
 @export var build_bar: PanelContainer
 
-##building_buttons
+#tile buttons
 @export var barley_button: Button
 @export var dates_button: Button
 @export var goat_button: Button
 @export var camel_button: Button
 @export var farm_button: Button
 
+#other buttons
 @export var end_day_button: Button
+@export var hammer_button: Button
 @export var popup_panel: Control
 @export var yes_button: Button
 @export var no_button: Button
 
-@export var barley_resource : Growable 
-@export var dates_resource : Growable
-@export var goat_resource : Growable
-@export var camel_resource : Growable
+#resources
+@export var barley_resource : Plant 
+@export var dates_resource : Plant
+@export var goat_resource : Plant
+@export var camel_resource : Animal
 @export var farm_resource : Building
-
 
 @onready var calendar_text: Label = %CalendarText
 @onready var coin_text: Label = %CoinText
@@ -33,16 +35,10 @@ signal day_advanced
 
 func _ready() -> void:
 	popup_panel.hide()
-	barley_button.pressed.connect(handle_action_bar_press.bind(barley_button))
-	dates_button.pressed.connect(handle_action_bar_press.bind(dates_button))
-	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
-	camel_button.pressed.connect(handle_action_bar_press.bind(camel_button))
-	farm_button.pressed.connect(handle_action_bar_press.bind(farm_button))
-	end_day_button.pressed.connect(handle_action_bar_press.bind(end_day_button))
-	yes_button.pressed.connect(handle_action_bar_press.bind(yes_button))
-	no_button.pressed.connect(handle_action_bar_press.bind(no_button))
+	connect_buttons()
 	
 func _process(_delta: float) -> void:
+	##TODO CUT AND PASTE BELOW AS ONREADY IN THE DATAMANAGER AUTOLOADER
 	calendar_text.text = str(DataManager.calendar)
 	coin_text.text = str(DataManager.coins)
 	wood_text.text = str(DataManager.wood)
@@ -79,3 +75,14 @@ func deploy(resource):
 
 func check_end_day():
 	popup_panel.show()
+
+func connect_buttons():
+	barley_button.pressed.connect(handle_action_bar_press.bind(barley_button))
+	dates_button.pressed.connect(handle_action_bar_press.bind(dates_button))
+	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
+	camel_button.pressed.connect(handle_action_bar_press.bind(camel_button))
+	farm_button.pressed.connect(handle_action_bar_press.bind(farm_button))
+	end_day_button.pressed.connect(handle_action_bar_press.bind(end_day_button))
+	yes_button.pressed.connect(handle_action_bar_press.bind(yes_button))
+	no_button.pressed.connect(handle_action_bar_press.bind(no_button))
+	hammer_button.toggled.connect(_on_hammer_button_toggled)

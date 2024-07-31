@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://luhukhrak7ou"]
 
-[ext_resource type="Script" path="res://scripts/logic/building_logic.gd" id="1_cu5or"]
+[ext_resource type="Script" path="res://scripts/logic/_building_logic.gd" id="1_cu5or"]
 [ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="2_632ty"]
 [ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="2_peprd"]
 [ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="3_yt6yg"]
