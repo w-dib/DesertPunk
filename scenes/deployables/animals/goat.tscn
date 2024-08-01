@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://6q0eiwqtkkah"]
 
-[ext_resource type="PackedScene" uid="uid://443ygjfgmy2p" path="res://scenes/deployables/animals/base_animal.tscn" id="1_bb0ye"]
+[ext_resource type="PackedScene" uid="uid://443ygjfgmy2p" path="res://scenes/deployables/animals/_base_animal.tscn" id="1_bb0ye"]
 
 [node name="Goat" instance=ExtResource("1_bb0ye")]
 

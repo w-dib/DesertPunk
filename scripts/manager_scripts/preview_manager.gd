@@ -42,6 +42,8 @@ func _draw():
 			draw_rect(building_area, Color(0, 1, 0, 0.5)) # Green
 		else:
 			draw_rect(building_area, Color(1, 0, 0, 0.5)) # Red
+	else:
+		draw_rect(building_area,Color.TRANSPARENT)
 
 func _input(event) -> void:
 	if event.is_action_pressed("cancel") and preview_active:
@@ -50,6 +52,7 @@ func _input(event) -> void:
 		buildable_manager.enabled = false
 		buildable_manager.resource_type = ""
 		preview_active = false
+		queue_redraw()
 
 func _on_buildable_state_changed(check_can_build: bool) -> void:
 	can_build = check_can_build
