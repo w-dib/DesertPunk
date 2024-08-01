@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://k3wudgrrj1fe"]
+
+[ext_resource type="Script" path="res://scripts/logic/animal_logic.gd" id="1_y1oi7"]
+[ext_resource type="Texture2D" uid="uid://po6hbdrqokdq" path="res://assets/tile_maps/NibblingGoatIdleSide.png" id="5_hltot"]
+[ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="7_f4tl8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o1lv"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jggu"]
+atlas = ExtResource("5_hltot")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blb68"]
+atlas = ExtResource("5_hltot")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxq25"]
+atlas = ExtResource("5_hltot")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2ylb"]
+atlas = ExtResource("5_hltot")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1jep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jggu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blb68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxq25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2ylb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BaseAnimal" type="Area2D" groups=["animal"]]
+script = ExtResource("1_y1oi7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3o1lv")
+
+[node name="1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l1jep")
+autoplay = "default"
+
+[node name="DescriptorUI" type="Control" parent="."]
+unique_name_in_owner = true
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 140.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("7_f4tl8")
+
+[node name="PanelContainer" type="PanelContainer" parent="DescriptorUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="DescriptorUI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="DescriptorText" type="Label" parent="DescriptorUI/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Node text"
+vertical_alignment = 1
+autowrap_mode = 2

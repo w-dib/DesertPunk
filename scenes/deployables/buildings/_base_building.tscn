@@ -1,25 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2cwxn3gerpa8"]
+[gd_scene load_steps=8 format=3 uid="uid://luhukhrak7ou"]
 
-[ext_resource type="Script" path="res://scripts/logic/building_logic.gd" id="1_1w7hc"]
+[ext_resource type="Script" path="res://scripts/logic/_building_logic.gd" id="1_cu5or"]
 [ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="2_632ty"]
 [ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="2_peprd"]
+[ext_resource type="Texture2D" uid="uid://cue6smd3srjgj" path="res://assets/icons/pointer_toon_a.svg" id="3_yt6yg"]
+[ext_resource type="Script" path="res://components/deployable_component.gd" id="4_3033j"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="5_at15n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6kn0"]
-size = Vector2(16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rompp"]
+size = Vector2(48, 48)
 
-[node name="BaseBuilding" type="Area2D" groups=["building"]]
-script = ExtResource("1_1w7hc")
+[node name="Building" type="Area2D" node_paths=PackedStringArray("descriptor_text", "descriptor_ui") groups=["building"]]
+z_index = 1
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_cu5or")
+descriptor_text = NodePath("DescriptorUI/PanelContainer/MarginContainer/DescriptorText")
+descriptor_ui = NodePath("DescriptorUI")
 resource = ExtResource("2_peprd")
+default_cursor = ExtResource("3_yt6yg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_s6kn0")
+shape = SubResource("RectangleShape2D_rompp")
 
 [node name="1" type="Sprite2D" parent="."]
 texture = ExtResource("2_632ty")
 
+[node name="DeployableComponent" type="Node2D" parent="." node_paths=PackedStringArray("parent_building")]
+script = ExtResource("4_3033j")
+parent_building = NodePath("..")
+
 [node name="DescriptorUI" type="Control" parent="."]
-unique_name_in_owner = true
 z_index = 2
 layout_mode = 3
 anchors_preset = 15
@@ -53,3 +64,9 @@ layout_mode = 2
 text = "Node text"
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

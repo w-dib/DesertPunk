@@ -12,6 +12,7 @@ name = "Farm"
 sprite = ExtResource("2_ujfiq")
 can_be_free_tile = true
 costs_action_to_deploy = false
+sprite_scale = Vector2i(1, 1)
 descriptor_text = "Grows animals over time.
 Animals feed on plants."
 resource_type = "building"

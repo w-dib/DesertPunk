@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bg72apqujfmbl"]
+[gd_scene load_steps=28 format=3 uid="uid://bg72apqujfmbl"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/manager_scripts/building_manager.gd" id="14_ccteo"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="14_yyn2l"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="15_hhqkg"]
+[ext_resource type="PackedScene" uid="uid://b2cwxn3gerpa8" path="res://scenes/deployables/buildings/base_building.tscn" id="16_gyeio"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qk7ri"]
 texture = ExtResource("2_vcnjb")
@@ -1000,3 +1001,6 @@ collide_with_areas = true
 script = ExtResource("14_ccteo")
 
 [node name="PreviewSprite" type="Sprite2D" parent="PreviewManager"]
+
+[node name="BaseBuilding" parent="." instance=ExtResource("16_gyeio")]
+position = Vector2(152, 216)

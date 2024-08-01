@@ -9,8 +9,8 @@ func _process(delta: float) -> void:
 	if is_colliding():
 				var can_build = true
 				match resource_type:
-					#"animal":
-						#can_build = check_animal_build_conditions(collider)
+					"animal":
+						can_build = check_animal_build_conditions()
 					"plant":
 						can_build = check_plant_build_conditions()
 					#"material":
@@ -27,8 +27,37 @@ func _process(delta: float) -> void:
 	else:
 		buildable_state_changed.emit(false)
 
-func check_animal_build_conditions(collider):
-	pass
+func check_animal_build_conditions() -> bool:
+	var has_foundation = false
+	var has_farm = false
+	var has_animal = false
+
+	var collision_count = get_collision_count()
+	for i in range(collision_count):
+		var collider = get_collider(i)
+		if collider:
+			var groups = collider.get_groups()
+			if "tilemap" in groups:
+				has_foundation = true
+			if "building" in groups:
+				has_farm = true
+			if "animal" in groups:
+				has_animal = true
+			
+			# Check if collider is in any other group
+			for group in groups:
+				if group not in ["tilemap", "building", "animal"]:
+					return false
+
+	# Check conditions based on the presence of foundation, farm, and animal
+	if has_foundation and has_farm and not has_animal:
+		return true
+	elif has_foundation and not has_farm:
+		return false
+	elif has_foundation and has_farm and has_animal:
+		return false
+
+	return false
 	
 func check_plant_build_conditions() -> bool:
 	var collision_count = get_collision_count()
