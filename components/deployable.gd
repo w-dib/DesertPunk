@@ -3,7 +3,7 @@ class_name Deployable
 
 @export var resource: DeployableResource
 
-var has_built: bool = false
+var has_built: bool = true
 
 @onready var descriptor_ui: Control = %DescriptorUI
 @onready var descriptor_text: Label = %DescriptorText

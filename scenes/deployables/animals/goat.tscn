@@ -2,7 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://k3wudgrrj1fe" path="res://scenes/deployables/animals/base_animal.tscn" id="1_bb0ye"]
 
-[node name="BaseAnimal" instance=ExtResource("1_bb0ye")]
-
-[node name="1" parent="." index="1"]
-frame_progress = 0.063104
+[node name="Goat" instance=ExtResource("1_bb0ye")]

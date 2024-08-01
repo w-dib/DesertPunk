@@ -3,7 +3,6 @@ extends ShapeCast2D
 signal buildable_state_changed(can_build: bool)
 
 var resource_type := ""
-var collision_count := 0
 
 func _process(delta: float) -> void:
 	if is_colliding():
@@ -13,12 +12,12 @@ func _process(delta: float) -> void:
 						can_build = check_animal_build_conditions()
 					"plant":
 						can_build = check_plant_build_conditions()
-					#"material":
-						#can_build = check_material_build_conditions(collider)
-					#"building":
-						#can_build = check_building_build_conditions(collider)
-					#"free_tile":
-						#can_build = check_free_tile_build_conditions(collider)
+					"material":
+						can_build = check_material_build_conditions()
+					"building":
+						can_build = check_building_build_conditions()
+					"free_tile":
+						can_build = check_free_tile_build_conditions()
 					_:
 						can_build = false
 				buildable_state_changed.emit(can_build)
@@ -39,14 +38,14 @@ func check_animal_build_conditions() -> bool:
 			var groups = collider.get_groups()
 			if "tilemap" in groups:
 				has_foundation = true
-			if "building" in groups:
+			if "farm" in groups:
 				has_farm = true
 			if "animal" in groups:
 				has_animal = true
 			
 			# Check if collider is in any other group
 			for group in groups:
-				if group not in ["tilemap", "building", "animal"]:
+				if group not in ["tilemap", "building", "farm"]:
 					return false
 
 	# Check conditions based on the presence of foundation, farm, and animal
@@ -67,19 +66,31 @@ func check_plant_build_conditions() -> bool:
 			if not collider.is_in_group("tilemap"):
 				return false
 	return true
-	
-	#if collider.is_in_group("tilemap"):
-		#return true
-		#print(collider)
-	#else:
-		#return false
 
-func check_material_build_conditions(collider):
-	pass
+func check_material_build_conditions():
+	var collision_count = get_collision_count()
+	for i in collision_count:
+		var collider = get_collider(i)
+		if collider:
+			if not collider.is_in_group("tilemap"):
+				return false
+	return true
 	
-func check_building_build_conditions(collider):
-	pass
+func check_building_build_conditions():
+	var collision_count = get_collision_count()
+	for i in collision_count:
+		var collider = get_collider(i)
+		if collider:
+			if not collider.is_in_group("tilemap"):
+				return false
+	return true
 	
-func check_free_tile_build_conditions(collider):
-	pass
+func check_free_tile_build_conditions():
+	var collision_count = get_collision_count()
+	for i in collision_count:
+		var collider = get_collider(i)
+		if collider:
+			if not collider.is_in_group("tilemap"):
+				return false
+	return true
 	

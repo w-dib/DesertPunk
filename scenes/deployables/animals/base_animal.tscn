@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://k3wudgrrj1fe"]
+[gd_scene load_steps=11 format=3 uid="uid://k3wudgrrj1fe"]
 
 [ext_resource type="Script" path="res://scripts/logic/animal_logic.gd" id="1_y1oi7"]
+[ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="2_3h1eq"]
 [ext_resource type="Texture2D" uid="uid://po6hbdrqokdq" path="res://assets/tile_maps/NibblingGoatIdleSide.png" id="5_hltot"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="7_f4tl8"]
 
@@ -45,6 +46,7 @@ animations = [{
 
 [node name="BaseAnimal" type="Area2D" groups=["animal"]]
 script = ExtResource("1_y1oi7")
+resource = ExtResource("2_3h1eq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_3o1lv")
@@ -52,6 +54,7 @@ shape = SubResource("RectangleShape2D_3o1lv")
 [node name="1" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l1jep")
 autoplay = "default"
+frame_progress = 0.560282
 
 [node name="DescriptorUI" type="Control" parent="."]
 unique_name_in_owner = true
