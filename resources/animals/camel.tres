@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=4 format=3 uid="uid://s4cgle27sbwl"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://s4cgle27sbwl"]
 
 [ext_resource type="Script" path="res://scripts/resource_scripts/plant_resource.gd" id="1_fedfu"]
 [ext_resource type="Texture2D" uid="uid://cbe18yvclsqk5" path="res://assets/tile_maps/GrazingCowIdleSide.png" id="2_vggn3"]
@@ -20,4 +20,5 @@ sprite = SubResource("AtlasTexture_d7rgg")
 can_be_free_tile = false
 costs_action_to_deploy = true
 descriptor_text = ""
+resource_type = "animal"
 deployable_scene = ""

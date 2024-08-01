@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="4_30sov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbjlx"]
-size = Vector2(48, 48)
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfas5"]
 atlas = ExtResource("3_4qrpn")
@@ -17,6 +17,8 @@ atlas = ExtResource("3_4qrpn")
 region = Rect2(48, 48, 16, 16)
 
 [node name="BasePlant" type="Area2D"]
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_ucryc")
 resource = ExtResource("2_x16n5")
 

@@ -1,4 +1,4 @@
 extends DeployableResource
-class_name ConstructionMaterial
+class_name MaterialResource
 
-@export_enum("WOOD", "STONE", "CLOTH") var material_type: int
+@export_enum("wood", "stone", "cloth") var material_type: String

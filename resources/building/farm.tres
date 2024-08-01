@@ -1,18 +1,18 @@
-[gd_resource type="Resource" script_class="Building" load_steps=2 format=3 uid="uid://btmxe2fvo0y8b"]
+[gd_resource type="Resource" script_class="BuildingResource" load_steps=3 format=3 uid="uid://btmxe2fvo0y8b"]
 
 [ext_resource type="Script" path="res://scripts/resource_scripts/building_resource.gd" id="1_yxs2b"]
+[ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="2_ujfiq"]
 
 [resource]
 script = ExtResource("1_yxs2b")
-name = "Farm"
 cost_wood = 1
 cost_stone = 0
 cost_cloth = 0
-tile_type = 1
+name = "Farm"
+sprite = ExtResource("2_ujfiq")
 can_be_free_tile = true
-costs_action_to_deply = true
-tile_map_source = 0
-tile_map_coordinates = Vector2i(0, 0)
+costs_action_to_deploy = false
 descriptor_text = "Grows animals over time.
 Animals feed on plants."
+resource_type = "building"
 deployable_scene = "res://scenes/deployables/buildings/farm.tscn"

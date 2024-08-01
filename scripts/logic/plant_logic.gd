@@ -1,4 +1,5 @@
 extends Deployable
+class_name Plant
 
 var first_click := true
 var current_sprite_index := 1

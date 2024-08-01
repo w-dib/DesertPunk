@@ -1,5 +1,5 @@
 extends DeployableResource
-class_name Animal
+class_name AnimalResource
 
 @export var sells_for: int
 @export var only_grows_on_action: bool

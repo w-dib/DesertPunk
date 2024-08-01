@@ -1,5 +1,5 @@
 extends DeployableResource
-class_name Building
+class_name BuildingResource
 
 @export var cost_wood: int
 @export var cost_stone: int

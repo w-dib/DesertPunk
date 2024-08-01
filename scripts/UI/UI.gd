@@ -20,11 +20,11 @@ signal day_advanced
 @export var no_button: Button
 
 #resources
-@export var barley_resource : Plant 
-@export var dates_resource : Plant
-@export var goat_resource : Plant
-@export var camel_resource : Animal
-@export var farm_resource : Building
+@export var barley_resource : PlantResource 
+@export var dates_resource : PlantResource
+@export var goat_resource : PlantResource
+@export var camel_resource : AnimalResource
+@export var farm_resource : BuildingResource
 
 @onready var calendar_text: Label = %CalendarText
 @onready var coin_text: Label = %CoinText

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=5 format=3 uid="uid://bcbhd2t5dslxw"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=5 format=3 uid="uid://bcbhd2t5dslxw"]
 
 [ext_resource type="Texture2D" uid="uid://b8o7rqfice8ma" path="res://assets/icons/tool_watering_can.svg" id="1_jfud3"]
 [ext_resource type="Script" path="res://scripts/resource_scripts/plant_resource.gd" id="2_pmfbf"]
@@ -20,7 +20,9 @@ sprite = SubResource("AtlasTexture_p1qeu")
 hover_cursor = ExtResource("1_jfud3")
 can_be_free_tile = false
 costs_action_to_deploy = false
+sprite_scale = Vector2i(3, 3)
 descriptor_text = "Needs 2 days to grow.
 Must be Watered Every day.
 Sells for 2 coins"
+resource_type = "plant"
 deployable_scene = "res://scenes/deployables/plants/barley.tscn"

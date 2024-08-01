@@ -1,5 +1,5 @@
 extends DeployableResource
-class_name Plant
+class_name PlantResource
 
 @export var sells_for : int
 @export var growth_time: int
