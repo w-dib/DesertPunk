@@ -40,6 +40,7 @@ func check_animal_build_conditions() -> bool:
 				has_foundation = true
 			if "farm" in groups:
 				has_farm = true
+				collider.has_animal = true
 			if "animal" in groups:
 				has_animal = true
 			

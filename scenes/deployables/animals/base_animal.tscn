@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://po6hbdrqokdq" path="res://assets/tile_maps/NibblingGoatIdleSide.png" id="5_hltot"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="7_f4tl8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o1lv"]
-size = Vector2(16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lotxb"]
+size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jggu"]
 atlas = ExtResource("5_hltot")
@@ -49,7 +49,7 @@ script = ExtResource("1_y1oi7")
 resource = ExtResource("2_3h1eq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_3o1lv")
+shape = SubResource("RectangleShape2D_lotxb")
 
 [node name="1" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l1jep")

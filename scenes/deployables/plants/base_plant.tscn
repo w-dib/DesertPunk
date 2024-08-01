@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_4qrpn"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="4_30sov"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbjlx"]
-size = Vector2(16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sc5o"]
+size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfas5"]
 atlas = ExtResource("3_4qrpn")
@@ -23,7 +23,7 @@ script = ExtResource("1_ucryc")
 resource = ExtResource("2_x16n5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_lbjlx")
+shape = SubResource("RectangleShape2D_0sc5o")
 
 [node name="1" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
