@@ -18,6 +18,7 @@ needs_nearby_plants_to_grow = true
 name = "Camel"
 sprite = SubResource("AtlasTexture_d7rgg")
 can_be_free_tile = false
+can_sell = true
 costs_action_to_deploy = true
 sprite_scale = Vector2i(1, 1)
 descriptor_text = ""

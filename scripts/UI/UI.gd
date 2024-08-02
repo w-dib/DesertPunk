@@ -70,7 +70,7 @@ func handle_action_bar_press(button_pressed: Button) -> void:
 func _on_hammer_button_toggled(_toggled_on: bool) -> void:
 	build_bar.visible = !build_bar.visible
 
-func deploy(resource) -> void:
+func deploy(resource: DeployableResource) -> void:
 	deployable_passed.emit(resource)
 
 func check_end_day() -> void:

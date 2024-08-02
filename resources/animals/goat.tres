@@ -19,7 +19,8 @@ name = "Goat"
 sprite = SubResource("AtlasTexture_a50io")
 hover_cursor = ExtResource("1_blx6f")
 can_be_free_tile = false
-costs_action_to_deploy = false
+can_sell = true
+costs_action_to_deploy = true
 sprite_scale = Vector2i(1, 1)
 descriptor_text = "Sells for 5. 
 Eats any plant."

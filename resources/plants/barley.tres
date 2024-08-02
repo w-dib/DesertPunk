@@ -19,6 +19,7 @@ name = "Barley"
 sprite = SubResource("AtlasTexture_ky0t1")
 hover_cursor = ExtResource("1_jfud3")
 can_be_free_tile = false
+can_sell = true
 costs_action_to_deploy = false
 sprite_scale = Vector2i(3, 3)
 descriptor_text = "Needs 2 days to grow.

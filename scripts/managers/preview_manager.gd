@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	building_area.position = -(building_area.size/2)
 	queue_redraw()
 		
-func preview(deployable: DeployableResource):
+func preview(deployable: DeployableResource) -> void:
 	if not DataManager.preview_active:
 		DataManager.preview_active = true
 	current_deployable_resource = deployable
@@ -38,11 +38,11 @@ func preview(deployable: DeployableResource):
 	preview_sprite.scale = deployable.sprite_scale
 	preview_sprite.texture = deployable.sprite
 
-func check_if_can_afford(current_deployable) -> bool:
+func check_if_can_afford(current_deployable: DeployableResource) -> bool:
 	return deployment_manager.check(current_deployable)
 
 func build() -> void:
-	var scene = load(current_deployable_resource.deployable_scene).instantiate()
+	var scene: Node = load(current_deployable_resource.deployable_scene).instantiate()
 	tiles.add_child(scene)
 	if current_deployable_resource.resource_type == "building": 
 		DataManager.wood -= current_deployable_resource.cost_wood
@@ -53,7 +53,7 @@ func build() -> void:
 		DataManager.water -= 1
 	cancel_preview()
 
-func cancel_preview():
+func cancel_preview() -> void:
 	preview_sprite.texture = null
 	buildable_manager.hide()
 	buildable_manager.enabled = false

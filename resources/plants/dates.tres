@@ -19,6 +19,7 @@ name = "Dates"
 sprite = SubResource("AtlasTexture_adh7l")
 hover_cursor = ExtResource("1_b8c22")
 can_be_free_tile = false
+can_sell = true
 costs_action_to_deploy = false
 sprite_scale = Vector2i(3, 3)
 descriptor_text = "Needs 8 days to grow.
