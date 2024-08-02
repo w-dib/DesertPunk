@@ -4,14 +4,6 @@
 [ext_resource type="Resource" uid="uid://x56371fy2cmy" path="res://resources/plants/dates.tres" id="2_h1ko4"]
 [ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_vhunl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_adh7l"]
-atlas = ExtResource("3_vhunl")
-region = Rect2(16, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvtce"]
-atlas = ExtResource("3_vhunl")
-region = Rect2(32, 48, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_278yv"]
 atlas = ExtResource("3_vhunl")
 region = Rect2(48, 48, 16, 16)
@@ -20,15 +12,16 @@ region = Rect2(48, 48, 16, 16)
 atlas = ExtResource("3_vhunl")
 region = Rect2(64, 48, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_adh7l"]
+atlas = ExtResource("3_vhunl")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvtce"]
+atlas = ExtResource("3_vhunl")
+region = Rect2(32, 48, 16, 16)
+
 [node name="Dates" instance=ExtResource("1_dpowy")]
 resource = ExtResource("2_h1ko4")
-
-[node name="1" parent="." index="1"]
-position = Vector2(0, -3)
-texture = SubResource("AtlasTexture_adh7l")
-
-[node name="2" parent="." index="2"]
-texture = SubResource("AtlasTexture_cvtce")
 
 [node name="3" type="Sprite2D" parent="." index="3"]
 visible = false
@@ -39,3 +32,10 @@ texture = SubResource("AtlasTexture_278yv")
 visible = false
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_gg453")
+
+[node name="1" parent="." index="5"]
+position = Vector2(0, -3)
+texture = SubResource("AtlasTexture_adh7l")
+
+[node name="2" parent="." index="6"]
+texture = SubResource("AtlasTexture_cvtce")

@@ -1,11 +1,9 @@
 extends Node2D
 class_name PreviewManager
 
-var preview_active := false
 var can_build := false
 var can_afford := false
 var current_deployable_resource: DeployableResource
-#signal deployable_deployed #add to interaction_manager script
 
 @export var cell_width: int = 46
 @export var cell_height: int = 46
@@ -28,12 +26,11 @@ func _process(_delta: float) -> void:
 	tile_map_position = tile_map.local_to_map(mouse_position)
 	global_position = tile_map.map_to_local(tile_map_position)
 	building_area.position = -(building_area.size/2)
-	#if preview_active:
 	queue_redraw()
 		
 func preview(deployable: DeployableResource):
-	if not preview_active:
-		preview_active = true
+	if not DataManager.preview_active:
+		DataManager.preview_active = true
 	current_deployable_resource = deployable
 	buildable_manager.show()
 	buildable_manager.enabled = true
@@ -61,11 +58,11 @@ func cancel_preview():
 	buildable_manager.hide()
 	buildable_manager.enabled = false
 	buildable_manager.resource_type = ""
-	preview_active = false
+	DataManager.preview_active = false
 	queue_redraw()
 			
 func _draw():
-	if preview_active:
+	if DataManager.preview_active:
 		if can_build:
 			draw_rect(building_area, Color(0, 1, 0, 0.5)) # Green
 		else:
@@ -75,7 +72,7 @@ func _draw():
 		draw_rect(building_area, Color(0.980392, 0.921569, 0.843137, 0.3), 1.0)
 
 func _input(event) -> void:		
-	if event.is_action_pressed("cancel") and preview_active:
+	if event.is_action_pressed("cancel") and DataManager.preview_active:
 		cancel_preview()
 	if event.is_action_pressed("interact") && can_build:
 		if check_if_can_afford(current_deployable_resource):

@@ -5,7 +5,7 @@ var first_click := true
 var current_sprite_index := 1
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("interact"):
+	if event.is_action_pressed("interact") && not DataManager.preview_active:
 		if first_click:
 			first_click = false
 		else:

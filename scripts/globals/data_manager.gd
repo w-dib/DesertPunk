@@ -18,3 +18,6 @@ var stone: int = 1 :
 var cloth: int = 1 :
 	set(new_value):
 		cloth = new_value
+
+###
+var preview_active := false

@@ -14,9 +14,10 @@ func _ready() -> void:
 	descriptor_ui.hide()
 
 func _on_mouse_entered() -> void:
-	descriptor_ui.show()
-	if resource.hover_cursor:
-		Input.set_custom_mouse_cursor(resource.hover_cursor)
+	if not DataManager.preview_active:
+		descriptor_ui.show()
+		if resource.hover_cursor:
+			Input.set_custom_mouse_cursor(resource.hover_cursor)
 
 func _on_mouse_exited() -> void:
 	descriptor_ui.hide()
