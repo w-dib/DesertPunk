@@ -4,4 +4,8 @@
 [ext_resource type="Script" path="res://scripts/logic/farm_logic.gd" id="2_6gowt"]
 
 [node name="Farm" groups=["farm"] instance=ExtResource("1_858qp")]
+z_index = 1
 script = ExtResource("2_6gowt")
+
+[node name="1" parent="." index="1"]
+position = Vector2(0, -6)
