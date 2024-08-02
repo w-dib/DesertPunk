@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scripts/resource_scripts/plant_resource.gd" id="2_pmfbf"]
 [ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_r07ma"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1qeu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky0t1"]
 atlas = ExtResource("3_r07ma")
-region = Rect2(16, 32, 16, 16)
+region = Rect2(32, 64, 16, 16)
 
 [resource]
 script = ExtResource("2_pmfbf")
@@ -16,7 +16,7 @@ only_grows_on_action = true
 needs_daily_watering_to_grow = true
 needs_nearby_plants_to_grow = false
 name = "Barley"
-sprite = SubResource("AtlasTexture_p1qeu")
+sprite = SubResource("AtlasTexture_ky0t1")
 hover_cursor = ExtResource("1_jfud3")
 can_be_free_tile = false
 costs_action_to_deploy = false

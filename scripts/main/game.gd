@@ -8,16 +8,16 @@ func _ready() -> void:
 	ui.deployable_passed.connect(_on_ui_deployable_passed)
 	ui.day_advanced.connect(_on_day_advanced)
 
-func _on_ui_deployable_passed(deployable : DeployableResource) -> void:
+func _on_ui_deployable_passed(deployable: DeployableResource) -> void:
 	preview_manager.preview(deployable)
 	
 func _on_day_advanced() -> void:
 	DataManager.water = 10
 
-#var current_deployable : DeployableResource = null
+#var current_deployable: DeployableResource = null
 #var preview_active := false
-#var deployable_component : Node2D
-#var preview_scene : Node2D
+#var deployable_component: Node2D
+#var preview_scene: Node2D
 #@export var hover_mouse: AnimatedSprite2D
 
 	#if !preview_active:

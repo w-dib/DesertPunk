@@ -37,19 +37,19 @@ func _unhandled_input(_event: InputEvent) -> void:
 	elif _event is InputEventMouseMotion and panning:
 		get_tree().get_root().set_input_as_handled()
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and Input.is_key_pressed(KEY_CTRL):
-			var new_position : Vector2 = global_position - _event.relative / zoom_level
+			var new_position: Vector2 = global_position - _event.relative / zoom_level
 			global_position = clamp_to_viewport(new_position)
 		else:
 			panning = false
 
 func clamp_to_viewport(new_position: Vector2) -> Vector2:
-	var viewport_size = Vector2(viewport_width, viewport_height) / zoom_level
-	var margin = viewport_size * 0.1
+	var viewport_size := Vector2(viewport_width, viewport_height) / zoom_level
+	var margin: Vector2 = viewport_size * 0.1
 
-	var min_x : float = margin.x
-	var max_x : float = viewport_width - margin.x
-	var min_y : float = margin.y
-	var max_y : float = viewport_height - margin.y
+	var min_x: float = margin.x
+	var max_x: float = viewport_width - margin.x
+	var min_y: float = margin.y
+	var max_y: float = viewport_height - margin.y
 
 	return Vector2(
 		clamp(new_position.x, min_x, max_x),

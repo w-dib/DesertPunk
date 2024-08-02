@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-signal deployable_passed(deployable : DeployableResource)
+signal deployable_passed(deployable: DeployableResource)
 signal day_advanced
 
 @export var build_bar: PanelContainer
@@ -20,11 +20,11 @@ signal day_advanced
 @export var no_button: Button
 
 #resources
-@export var barley_resource : PlantResource 
-@export var dates_resource : PlantResource
-@export var goat_resource : PlantResource
-@export var camel_resource : AnimalResource
-@export var farm_resource : BuildingResource
+@export var barley_resource: PlantResource 
+@export var dates_resource: PlantResource
+@export var goat_resource: PlantResource
+@export var camel_resource: AnimalResource
+@export var farm_resource: BuildingResource
 
 @onready var calendar_text: Label = %CalendarText
 @onready var coin_text: Label = %CoinText
@@ -46,7 +46,7 @@ func _process(_delta: float) -> void:
 	water_text.text = str(DataManager.water) + " / 10"
 	progress_bar.value = DataManager.water
 		
-func handle_action_bar_press(button_pressed) -> void:
+func handle_action_bar_press(button_pressed: Button) -> void:
 	match button_pressed:
 		barley_button:
 			deploy(barley_resource)

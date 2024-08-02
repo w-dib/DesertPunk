@@ -2,14 +2,14 @@ extends Node2D
 class_name DeployableComponent
 
 @onready var tile_map: TileMap = get_tree().get_first_node_in_group("tilemap")
-@onready var mouse_position : Vector2
-@onready var tile_map_position : Vector2i
+@onready var mouse_position: Vector2
+@onready var tile_map_position: Vector2i
 @onready var building_area := Rect2(0,0,cell_width,cell_height)
 @onready var surrounding_cells := []
 
 @export var cell_width: int = 48
 @export var cell_height: int = 48
-@export var parent_building : Area2D
+@export var parent_building: Area2D
 
 var has_built = false
 var deploying_in_farm = false
@@ -101,7 +101,7 @@ func pay_cost() -> void:
 
 func can_afford() -> bool:
 	if parent_building.is_in_group("building"):
-		return DataManager.wood >= parent_building.resource.cost_wood && DataManager.stone >= parent_building.resource.cost_stone
+		return DataManager.wood >= parent_building.resource.cost_wood && DataManager.stone >= parent_building.resource.cost_ston
 	return false
 
 

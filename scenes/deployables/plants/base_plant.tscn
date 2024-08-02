@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://d304nalo4b4q4"]
+[gd_scene load_steps=7 format=3 uid="uid://d304nalo4b4q4"]
 
 [ext_resource type="Script" path="res://scripts/logic/plant_logic.gd" id="1_ucryc"]
-[ext_resource type="Resource" uid="uid://bcbhd2t5dslxw" path="res://resources/plants/barley.tres" id="2_x16n5"]
 [ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_4qrpn"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="4_30sov"]
 
@@ -10,20 +9,23 @@ size = Vector2(48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mfas5"]
 atlas = ExtResource("3_4qrpn")
-region = Rect2(48, 32, 16, 16)
+region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p23pp"]
 atlas = ExtResource("3_4qrpn")
-region = Rect2(48, 48, 16, 16)
+region = Rect2(64, 64, 16, 16)
 
 [node name="BasePlant" type="Area2D" groups=["plant"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_ucryc")
-resource = ExtResource("2_x16n5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_0sc5o")
+
+[node name="FloorDry" type="Sprite2D" parent="."]
+
+[node name="FloorWet" type="Sprite2D" parent="."]
 
 [node name="1" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -31,7 +33,6 @@ texture = SubResource("AtlasTexture_mfas5")
 
 [node name="2" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(1, 0, 0.270588, 1)
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_p23pp")
 

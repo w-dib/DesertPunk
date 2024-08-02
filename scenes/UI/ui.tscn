@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://noaelpdlywqs"]
+[gd_scene load_steps=26 format=3 uid="uid://noaelpdlywqs"]
 
 [ext_resource type="Script" path="res://scripts/UI/UI.gd" id="1_fdw0t"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="2_qxfbr"]
 [ext_resource type="Resource" uid="uid://bcbhd2t5dslxw" path="res://resources/plants/barley.tres" id="2_ugbnq"]
 [ext_resource type="Resource" uid="uid://x56371fy2cmy" path="res://resources/plants/dates.tres" id="3_yj0vm"]
 [ext_resource type="Resource" uid="uid://yah5jogo0q4h" path="res://resources/animals/goat.tres" id="4_oyjvt"]
-[ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="4_wvrwy"]
 [ext_resource type="Resource" uid="uid://s4cgle27sbwl" path="res://resources/animals/camel.tres" id="5_jplgw"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="5_xvnit"]
 [ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="6_66q4k"]
@@ -15,12 +14,18 @@
 [ext_resource type="Texture2D" uid="uid://bmkska6gxxf1c" path="res://assets/icons/mark_question.svg" id="9_ervdb"]
 [ext_resource type="Texture2D" uid="uid://cm8xai6eqofem" path="res://assets/icons/candle.png" id="9_va0er"]
 [ext_resource type="Texture2D" uid="uid://cgfrsvhr04qgo" path="res://assets/icons/calendar.png" id="10_icg0r"]
+[ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="10_or83o"]
 [ext_resource type="Texture2D" uid="uid://d32qiepekicqr" path="res://assets/icons/water.png" id="11_3ont5"]
 [ext_resource type="Texture2D" uid="uid://po6hbdrqokdq" path="res://assets/tile_maps/NibblingGoatIdleSide.png" id="12_1jhtv"]
 [ext_resource type="Texture2D" uid="uid://b5r6tj5emuex8" path="res://assets/icons/coin.png" id="12_6ohtf"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood_button.png" id="13_hggv1"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone_button.png" id="14_yh67f"]
 [ext_resource type="Texture2D" uid="uid://ccmxikhuq66vy" path="res://assets/icons/unlock.png" id="15_aia5v"]
+[ext_resource type="PackedScene" uid="uid://drwx5n4legs7t" path="res://scenes/deployables/plants/barley.tscn" id="22_edjg5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll1k4"]
+atlas = ExtResource("10_or83o")
+region = Rect2(64, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_14eki"]
 atlas = ExtResource("12_1jhtv")
@@ -157,7 +162,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-icon = ExtResource("4_wvrwy")
+icon = SubResource("AtlasTexture_ll1k4")
 icon_alignment = 1
 expand_icon = true
 
@@ -486,3 +491,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "No"
+
+[node name="Barley" parent="." instance=ExtResource("22_edjg5")]

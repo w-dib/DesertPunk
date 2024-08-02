@@ -5,7 +5,7 @@ var first_click := true
 var current_sprite_index := 1
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("interact") && has_built:
+	if event.is_action_pressed("interact"):
 		if first_click:
 			first_click = false
 		else:
@@ -19,10 +19,10 @@ func advance_sprite() -> void:
 		if DataManager.water > 0:
 			DataManager.water -= 1
 		
-func hide_sprite(index : int) -> void:
+func hide_sprite(index: int) -> void:
 	var node = find_child(str(index))
 	node.hide()
 
-func show_sprite(index : int) -> void:
+func show_sprite(index: int) -> void:
 	var node = find_child(str(index))
 	node.show()

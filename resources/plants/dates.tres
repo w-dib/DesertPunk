@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scripts/resource_scripts/plant_resource.gd" id="1_inwsk"]
 [ext_resource type="Texture2D" uid="uid://dtyot2q1k03fv" path="res://assets/tile_maps/PixelFarm_Crops.png" id="3_dxxu2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dre35"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_adh7l"]
 atlas = ExtResource("3_dxxu2")
-region = Rect2(16, 16, 16, 16)
+region = Rect2(16, 48, 16, 16)
 
 [resource]
 script = ExtResource("1_inwsk")
@@ -16,7 +16,7 @@ only_grows_on_action = true
 needs_daily_watering_to_grow = false
 needs_nearby_plants_to_grow = false
 name = "Dates"
-sprite = SubResource("AtlasTexture_dre35")
+sprite = SubResource("AtlasTexture_adh7l")
 hover_cursor = ExtResource("1_b8c22")
 can_be_free_tile = false
 costs_action_to_deploy = false

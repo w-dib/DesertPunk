@@ -15,7 +15,8 @@ hover_cursor = ExtResource("1_q5ur0")
 can_be_free_tile = true
 costs_action_to_deploy = false
 sprite_scale = Vector2i(1, 1)
-descriptor_text = "Grows animals over time.
+descriptor_text = "Costs 1 wood.
+Grows animals over time.
 Animals feed on plants."
 resource_type = "building"
 deployable_scene = "res://scenes/deployables/buildings/farm.tscn"

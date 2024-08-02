@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2cwxn3gerpa8"]
+[gd_scene load_steps=5 format=3 uid="uid://b2cwxn3gerpa8"]
 
 [ext_resource type="Script" path="res://scripts/logic/building_logic.gd" id="1_1w7hc"]
 [ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="2_632ty"]
-[ext_resource type="Resource" uid="uid://btmxe2fvo0y8b" path="res://resources/building/farm.tres" id="2_peprd"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="5_at15n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6kn0"]
@@ -10,7 +9,6 @@ size = Vector2(48, 48)
 
 [node name="BaseBuilding" type="Area2D" groups=["building"]]
 script = ExtResource("1_1w7hc")
-resource = ExtResource("2_peprd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_s6kn0")
