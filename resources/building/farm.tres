@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="BuildingResource" load_steps=3 format=3 uid="uid://btmxe2fvo0y8b"]
+[gd_resource type="Resource" script_class="BuildingResource" load_steps=4 format=3 uid="uid://btmxe2fvo0y8b"]
 
+[ext_resource type="Texture2D" uid="uid://b811ishty1380" path="res://assets/icons/hand_point.svg" id="1_q5ur0"]
 [ext_resource type="Script" path="res://scripts/resource_scripts/building_resource.gd" id="1_yxs2b"]
 [ext_resource type="Texture2D" uid="uid://bcbpmh4f00cif" path="res://assets/icons/farm.png" id="2_ujfiq"]
 
@@ -10,6 +11,7 @@ cost_stone = 0
 cost_cloth = 0
 name = "Farm"
 sprite = ExtResource("2_ujfiq")
+hover_cursor = ExtResource("1_q5ur0")
 can_be_free_tile = true
 costs_action_to_deploy = false
 sprite_scale = Vector2i(1, 1)

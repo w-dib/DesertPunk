@@ -24,6 +24,7 @@ region = Rect2(64, 48, 16, 16)
 resource = ExtResource("2_h1ko4")
 
 [node name="1" parent="." index="1"]
+position = Vector2(0, -3)
 texture = SubResource("AtlasTexture_adh7l")
 
 [node name="2" parent="." index="2"]
@@ -31,7 +32,6 @@ texture = SubResource("AtlasTexture_cvtce")
 
 [node name="3" type="Sprite2D" parent="." index="3"]
 visible = false
-modulate = Color(1, 0, 0.270588, 1)
 scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_278yv")
 

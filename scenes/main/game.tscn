@@ -1002,24 +1002,24 @@ script = ExtResource("14_ccteo")
 [node name="PreviewSprite" type="Sprite2D" parent="PreviewManager"]
 
 [node name="Dates" parent="." instance=ExtResource("13_btwil")]
-position = Vector2(152, 152)
+position = Vector2(536, 88)
 collision_layer = 1
 collision_mask = 1
 
 [node name="BaseBuilding" parent="." instance=ExtResource("16_gyeio")]
-position = Vector2(152, 216)
+position = Vector2(536, 152)
 
 [node name="Farm" parent="." instance=ExtResource("17_u1es6")]
-position = Vector2(280, 216)
+position = Vector2(536, 216)
 
 [node name="Farm2" parent="." instance=ExtResource("17_u1es6")]
-position = Vector2(408, 216)
+position = Vector2(472, 152)
 
 [node name="Goat" parent="." instance=ExtResource("16_h41i7")]
-position = Vector2(280, 216)
+position = Vector2(536, 216)
 
 [node name="Stone" parent="." instance=ExtResource("19_scki6")]
-position = Vector2(344, 152)
+position = Vector2(472, 216)
 
 [node name="Wood" parent="." instance=ExtResource("20_i0ey4")]
-position = Vector2(280, 88)
+position = Vector2(472, 88)
