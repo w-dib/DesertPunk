@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1bsj8c37q2fn"
-path="res://.godot/imported/wood.png-6ebab34d08c5c1a328a9b3a7c78d35f4.ctex"
+uid="uid://bvd7qdmqbe6dc"
+path="res://.godot/imported/well.png-48992dfea69a99ea3781a7978a4f12ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/wood.png"
-dest_files=["res://.godot/imported/wood.png-6ebab34d08c5c1a328a9b3a7c78d35f4.ctex"]
+source_file="res://assets/icons/well.png"
+dest_files=["res://.godot/imported/well.png-48992dfea69a99ea3781a7978a4f12ce.ctex"]
 
 [params]
 

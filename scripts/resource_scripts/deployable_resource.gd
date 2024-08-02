@@ -8,7 +8,7 @@ class_name DeployableResource
 @export var costs_action_to_deploy : bool
 @export var sprite_scale := Vector2i(1,1)
 @export_multiline var descriptor_text: String
-@export_enum("animal", "plant", "material", "building", "free_tile") var resource_type: String
+@export_enum("animal", "plant", "crafting_material", "building", "free_tile") var resource_type: String
 @export_file("*.tscn") var deployable_scene: String
 
 #@export var tile_map_source : int

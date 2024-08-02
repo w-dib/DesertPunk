@@ -20,12 +20,12 @@ func _ready() -> void:
 	buildable_manager.buildable_state_changed.connect(_on_buildable_state_changed)
 
 func _process(_delta: float) -> void:
-	if preview_active:
-		mouse_position = get_global_mouse_position()
-		tile_map_position = tile_map.local_to_map(mouse_position)
-		global_position = tile_map.map_to_local(tile_map_position)
-		building_area.position = -(building_area.size/2)
-		queue_redraw()
+	mouse_position = get_global_mouse_position()
+	tile_map_position = tile_map.local_to_map(mouse_position)
+	global_position = tile_map.map_to_local(tile_map_position)
+	building_area.position = -(building_area.size/2)
+	#if preview_active:
+	queue_redraw()
 		
 func preview(deployable: DeployableResource):
 	if not preview_active:
@@ -43,7 +43,8 @@ func _draw():
 		else:
 			draw_rect(building_area, Color(1, 0, 0, 0.5)) # Red
 	else:
-		draw_rect(building_area,Color.TRANSPARENT)
+		#draw_rect(building_area,Color.TRANSPARENT)
+		draw_rect(building_area, Color(0.980392, 0.921569, 0.843137, 0.3), 1.0)
 
 func _input(event) -> void:
 	if event.is_action_pressed("cancel") and preview_active:

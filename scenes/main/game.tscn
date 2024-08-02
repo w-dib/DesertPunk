@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bg72apqujfmbl"]
+[gd_scene load_steps=32 format=3 uid="uid://bg72apqujfmbl"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
@@ -13,11 +13,13 @@
 [ext_resource type="PackedScene" uid="uid://b0h126vwrunik" path="res://scenes/deployables/plants/dates.tscn" id="13_btwil"]
 [ext_resource type="Script" path="res://scripts/manager_scripts/preview_manager.gd" id="13_crgm8"]
 [ext_resource type="Script" path="res://scripts/manager_scripts/building_manager.gd" id="14_ccteo"]
-[ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood.png" id="14_yyn2l"]
-[ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone.png" id="15_hhqkg"]
+[ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood_button.png" id="14_yyn2l"]
+[ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone_button.png" id="15_hhqkg"]
 [ext_resource type="PackedScene" uid="uid://b2cwxn3gerpa8" path="res://scenes/deployables/buildings/base_building.tscn" id="16_gyeio"]
 [ext_resource type="PackedScene" uid="uid://b8y3fbi4gfbsl" path="res://scenes/deployables/animals/goat.tscn" id="16_h41i7"]
 [ext_resource type="PackedScene" uid="uid://b28f23af024nx" path="res://scenes/deployables/buildings/farm.tscn" id="17_u1es6"]
+[ext_resource type="PackedScene" uid="uid://tawagai2rxfh" path="res://scenes/deployables/crafting_material/stone.tscn" id="19_scki6"]
+[ext_resource type="PackedScene" uid="uid://deoo0ytufwotw" path="res://scenes/deployables/crafting_material/wood.tscn" id="20_i0ey4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qk7ri"]
 texture = ExtResource("2_vcnjb")
@@ -985,11 +987,6 @@ camel_resource = null
 
 [node name="Tiles" type="Node" parent="."]
 
-[node name="Dates" parent="." instance=ExtResource("13_btwil")]
-position = Vector2(152, 152)
-collision_layer = 1
-collision_mask = 1
-
 [node name="PreviewManager" type="Node2D" parent="."]
 script = ExtResource("13_crgm8")
 
@@ -1004,6 +1001,11 @@ script = ExtResource("14_ccteo")
 
 [node name="PreviewSprite" type="Sprite2D" parent="PreviewManager"]
 
+[node name="Dates" parent="." instance=ExtResource("13_btwil")]
+position = Vector2(152, 152)
+collision_layer = 1
+collision_mask = 1
+
 [node name="BaseBuilding" parent="." instance=ExtResource("16_gyeio")]
 position = Vector2(152, 216)
 
@@ -1015,3 +1017,9 @@ position = Vector2(408, 216)
 
 [node name="Goat" parent="." instance=ExtResource("16_h41i7")]
 position = Vector2(280, 216)
+
+[node name="Stone" parent="." instance=ExtResource("19_scki6")]
+position = Vector2(344, 152)
+
+[node name="Wood" parent="." instance=ExtResource("20_i0ey4")]
+position = Vector2(280, 88)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1bsj8c37q2fn"
-path="res://.godot/imported/wood.png-6ebab34d08c5c1a328a9b3a7c78d35f4.ctex"
+uid="uid://cvoaye1yhtsel"
+path="res://.godot/imported/tool_pickaxe.svg-f4e3e4144e1f901c53d52ab75e678d1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/wood.png"
-dest_files=["res://.godot/imported/wood.png-6ebab34d08c5c1a328a9b3a7c78d35f4.ctex"]
+source_file="res://assets/icons/tool_pickaxe.svg"
+dest_files=["res://.godot/imported/tool_pickaxe.svg-f4e3e4144e1f901c53d52ab75e678d1a.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

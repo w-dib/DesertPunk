@@ -11,7 +11,7 @@ func _ready() -> void:
 func _on_ui_deployable_passed(deployable : DeployableResource) -> void:
 	preview_manager.preview(deployable)
 	
-func _on_day_advanced():
+func _on_day_advanced() -> void:
 	DataManager.water = 10
 
 #var current_deployable : DeployableResource = null

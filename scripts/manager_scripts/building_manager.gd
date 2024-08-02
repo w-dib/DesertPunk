@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 						can_build = check_animal_build_conditions()
 					"plant":
 						can_build = check_plant_build_conditions()
-					"material":
-						can_build = check_material_build_conditions()
+					"crafting_material":
+						can_build = check_crafting_material_build_conditions()
 					"building":
 						can_build = check_building_build_conditions()
 					"free_tile":
@@ -40,7 +40,7 @@ func check_animal_build_conditions() -> bool:
 				has_foundation = true
 			if "farm" in groups:
 				has_farm = true
-				collider.has_animal = true
+				collider.has_animal = true ### this should be in the deployment_manager script
 			if "animal" in groups:
 				has_animal = true
 			
@@ -62,13 +62,13 @@ func check_animal_build_conditions() -> bool:
 func check_plant_build_conditions() -> bool:
 	var collision_count = get_collision_count()
 	for i in collision_count:
-		var collider = get_collider(i)
+		var collider: Object = get_collider(i)
 		if collider:
 			if not collider.is_in_group("tilemap"):
 				return false
 	return true
 
-func check_material_build_conditions():
+func check_crafting_material_build_conditions():
 	var collision_count = get_collision_count()
 	for i in collision_count:
 		var collider = get_collider(i)

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="MaterialResource" load_steps=4 format=3 uid="uid://dvetqfv8qyqw7"]
+
+[ext_resource type="Script" path="res://scripts/resource_scripts/crafting_material_resource.gd" id="1_fyy10"]
+[ext_resource type="Texture2D" uid="uid://bqt5xen4m3gnc" path="res://assets/icons/tool_axe_single.svg" id="1_w3nut"]
+[ext_resource type="Texture2D" uid="uid://1bsj8c37q2fn" path="res://assets/icons/wood.png" id="3_mfltn"]
+
+[resource]
+script = ExtResource("1_fyy10")
+material_type = "wood"
+name = ""
+sprite = ExtResource("3_mfltn")
+hover_cursor = ExtResource("1_w3nut")
+can_be_free_tile = true
+costs_action_to_deploy = true
+sprite_scale = Vector2i(1, 1)
+descriptor_text = "Adds one wood resource.
+Used for building."
+resource_type = ""
+deployable_scene = ""

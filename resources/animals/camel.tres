@@ -19,6 +19,7 @@ name = "Camel"
 sprite = SubResource("AtlasTexture_d7rgg")
 can_be_free_tile = false
 costs_action_to_deploy = true
+sprite_scale = Vector2i(1, 1)
 descriptor_text = ""
 resource_type = "animal"
 deployable_scene = ""

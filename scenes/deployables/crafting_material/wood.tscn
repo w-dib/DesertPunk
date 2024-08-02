@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://deoo0ytufwotw"]
+
+[ext_resource type="PackedScene" uid="uid://dbgnayoi5mumy" path="res://scenes/deployables/crafting_material/base_crafting_material.tscn" id="1_x7wry"]
+
+[node name="Wood" instance=ExtResource("1_x7wry")]
