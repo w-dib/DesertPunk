@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://noaelpdlywqs"]
+[gd_scene load_steps=25 format=3 uid="uid://noaelpdlywqs"]
 
 [ext_resource type="Script" path="res://scripts/UI/UI.gd" id="1_fdw0t"]
 [ext_resource type="Theme" uid="uid://0e4aimj026h8" path="res://resources/theme/main.tres" id="2_qxfbr"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood_button.png" id="13_hggv1"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone_button.png" id="14_yh67f"]
 [ext_resource type="Texture2D" uid="uid://ccmxikhuq66vy" path="res://assets/icons/unlock.png" id="15_aia5v"]
-[ext_resource type="PackedScene" uid="uid://drwx5n4legs7t" path="res://scenes/deployables/plants/barley.tscn" id="22_edjg5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll1k4"]
 atlas = ExtResource("10_or83o")
@@ -491,5 +490,3 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "No"
-
-[node name="Barley" parent="." instance=ExtResource("22_edjg5")]

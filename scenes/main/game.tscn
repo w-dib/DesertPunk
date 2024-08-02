@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bg72apqujfmbl"]
+[gd_scene load_steps=30 format=3 uid="uid://bg72apqujfmbl"]
 
 [ext_resource type="Script" path="res://scripts/main/game.gd" id="1_kfgdk"]
 [ext_resource type="Script" path="res://scripts/camera/camera_2d.gd" id="2_jf6k2"]
@@ -10,11 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://mrpbaru52fy5" path="res://assets/icons/barley.png" id="7_nldxv"]
 [ext_resource type="Texture2D" uid="uid://bok213me2v2io" path="res://assets/tile_maps/PasturingSheepIdleSide.png" id="8_c46ho"]
 [ext_resource type="Texture2D" uid="uid://djsufpb4iexqf" path="res://assets/icons/date.png" id="8_vufiq"]
-[ext_resource type="Script" path="res://scripts/manager_scripts/preview_manager.gd" id="13_crgm8"]
-[ext_resource type="Script" path="res://scripts/manager_scripts/building_manager.gd" id="14_ccteo"]
+[ext_resource type="Script" path="res://scripts/managers/preview_manager.gd" id="13_crgm8"]
+[ext_resource type="Script" path="res://scripts/managers/building_manager.gd" id="14_ccteo"]
 [ext_resource type="Texture2D" uid="uid://t6a5mm0bgi10" path="res://assets/icons/wood_button.png" id="14_yyn2l"]
 [ext_resource type="Texture2D" uid="uid://bo48si7atv3lk" path="res://assets/icons/stone_button.png" id="15_hhqkg"]
-[ext_resource type="Script" path="res://scripts/manager_scripts/deployment_manager.gd" id="15_p056q"]
+[ext_resource type="Script" path="res://scripts/managers/deployment_manager.gd" id="15_p056q"]
+[ext_resource type="Script" path="res://scripts/managers/day_advance_manager.gd" id="18_q5lwa"]
 [ext_resource type="PackedScene" uid="uid://tawagai2rxfh" path="res://scenes/deployables/crafting_material/stone.tscn" id="19_scki6"]
 [ext_resource type="PackedScene" uid="uid://deoo0ytufwotw" path="res://scenes/deployables/crafting_material/wood.tscn" id="20_i0ey4"]
 
@@ -1007,3 +1008,6 @@ position = Vector2(472, 216)
 
 [node name="Wood" parent="." instance=ExtResource("20_i0ey4")]
 position = Vector2(472, 88)
+
+[node name="DayAdvanceManager" type="Node" parent="."]
+script = ExtResource("18_q5lwa")
