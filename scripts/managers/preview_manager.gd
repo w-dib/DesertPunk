@@ -49,6 +49,7 @@ func build() -> void:
 		DataManager.stone -= current_deployable_resource.cost_stone
 		DataManager.cloth -= current_deployable_resource.cost_cloth
 	scene.global_position = global_position
+	tween_deployable(scene)
 	if DataManager.water > 0:
 		DataManager.water -= 1
 	cancel_preview()
@@ -75,8 +76,16 @@ func _input(event) -> void:
 	if event.is_action_pressed("cancel") and DataManager.preview_active:
 		cancel_preview()
 	if event.is_action_pressed("interact") && can_build:
+		SoundManager.play_random_sound()
 		if check_if_can_afford(current_deployable_resource):
 			build()
 
 func _on_buildable_state_changed(check_can_build: bool) -> void:
 	can_build = check_can_build
+
+func tween_deployable(tweenable) -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(tweenable, "scale", Vector2(1.1, 1.1), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(tweenable, "modulate", Color(1, 1, 1, 0.2), 0.1)
+	tween.tween_property(tweenable, "scale", Vector2(1, 1), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(tweenable, "modulate", Color(1, 1, 1, 1), 0.1)

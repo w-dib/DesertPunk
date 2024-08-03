@@ -90,7 +90,7 @@ func tween_label(label: Label) -> void:
 	tween.tween_property(label, "scale", Vector2(1.5, 1.5), 0.2).set_trans(Tween.TRANS_LINEAR)
 	tween.parallel().tween_property(label, "modulate", Color.GREEN, 0.2)
 	tween.tween_property(label, "scale", Vector2(1, 1), 0.2).set_trans(Tween.TRANS_LINEAR)
-	tween.parallel().tween_property(label, "modulate", label.modulate, 0.2)
+	tween.parallel().tween_property(label, "modulate", Color.WHITE, 0.2)
 
 func update_ui_data_text() -> void:
 	calendar_text.text = str(DataManager.calendar)
@@ -111,3 +111,10 @@ func connect_signals() -> void:
 	no_button.pressed.connect(handle_action_bar_press.bind(no_button))
 	hammer_button.toggled.connect(_on_hammer_button_toggled)
 	DataManager.ui_data_updated.connect(on_ui_data_updated)
+
+func _on_out_of_water() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(water_text, "scale", Vector2(1.5, 1.5), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(water_text, "modulate", Color.RED, 0.1)
+	tween.tween_property(water_text, "scale", Vector2(1, 1), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(water_text, "modulate", Color(1, 1, 1, 1), 0.1)

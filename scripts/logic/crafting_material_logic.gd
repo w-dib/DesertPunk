@@ -3,7 +3,8 @@ class_name CraftingMaterial
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("interact") && not DataManager.preview_active:
-			consume_resource()
+		SoundManager.play_random_sound()
+		consume_resource()
 			
 func consume_resource() -> void:
 	if DataManager.water > 0:
@@ -17,3 +18,5 @@ func consume_resource() -> void:
 		if DataManager.water > 0:
 			DataManager.water -= 1
 		queue_free()
+	else:
+		SoundManager.play_sound(6)

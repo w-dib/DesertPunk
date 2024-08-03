@@ -9,6 +9,10 @@ var is_plant_watered := false
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("interact") && not DataManager.preview_active:
+		if is_plant_watered:
+			SoundManager.play_sound(6)
+		else:
+			SoundManager.play_random_sound()
 		if ready_for_sale:
 			sell()
 		elif first_click:
@@ -44,6 +48,7 @@ func update_floor() -> void:
 		else:
 			return
 func sell() -> void:
+		SoundManager.play_sound(4)
 		DataManager.coins += resource.sells_for
 		Input.set_custom_mouse_cursor(default_cursor)
 		queue_free()

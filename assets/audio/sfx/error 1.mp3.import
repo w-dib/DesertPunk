@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkvb2s3arlmpd"
+path="res://.godot/imported/error 1.mp3-b17ca12a51935890cb767f834ccb005b.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/error 1.mp3"
+dest_files=["res://.godot/imported/error 1.mp3-b17ca12a51935890cb767f834ccb005b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

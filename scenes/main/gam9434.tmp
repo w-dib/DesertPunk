@@ -1012,7 +1012,3 @@ position = Vector2(472, 88)
 [node name="DayAdvanceManager" type="Node" parent="." node_paths=PackedStringArray("tiles")]
 script = ExtResource("18_q5lwa")
 tiles = NodePath("../Tiles")
-
-[connection signal="out_of_water" from="PreviewManager/DeploymentManager" to="UI" method="_on_out_of_water"]
-
-[editable path="UI"]

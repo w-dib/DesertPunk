@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6md55q8cgsm6"
+path="res://.godot/imported/pop 5.mp3-182f1e081dffe10cb42ba0c9bcceef03.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/sfx/pop 5.mp3"
+dest_files=["res://.godot/imported/pop 5.mp3-182f1e081dffe10cb42ba0c9bcceef03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
