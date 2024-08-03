@@ -14,5 +14,3 @@ func _on_ui_deployable_passed(deployable: DeployableResource) -> void:
 	
 func _on_day_advanced() -> void:
 	day_advance_manager.advance_day()
-
-

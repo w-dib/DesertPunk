@@ -26,6 +26,7 @@ signal day_advanced
 @export var camel_resource: AnimalResource
 @export var farm_resource: BuildingResource
 
+#texts
 @onready var calendar_text: Label = %CalendarText
 @onready var coin_text: Label = %CoinText
 @onready var wood_text: Label = %WoodText
@@ -38,15 +39,6 @@ func _ready() -> void:
 	connect_signals()
 	update_ui_data_text()
 	
-#func _process(_delta: float) -> void:
-	###TODO CUT AND PASTE BELOW AS ONREADY IN THE DATAMANAGER AUTOLOADER
-	#calendar_text.text = str(DataManager.calendar)
-	#coin_text.text = str(DataManager.coins)
-	#wood_text.text = str(DataManager.wood)
-	#stone_text.text = str(DataManager.stone)
-	#water_text.text = str(DataManager.water) + " / 10"
-	#progress_bar.value = DataManager.water
-		
 func handle_action_bar_press(button_pressed: Button) -> void:
 	match button_pressed:
 		barley_button:
@@ -78,8 +70,27 @@ func check_end_day() -> void:
 	popup_panel.show()
 
 func on_ui_data_updated(variable_name: String, new_value: int) -> void:
-	print(variable_name + " is updated to " + str(new_value))
 	update_ui_data_text()
+	match variable_name:
+		"calendar":
+			tween_label(calendar_text)
+		"coins":
+			tween_label(coin_text)
+		"water":
+			tween_label(water_text)
+		"wood":
+			tween_label(wood_text)
+		"stone":
+			tween_label(stone_text)
+		#"cloth":
+			#tween_label(cloth_text)
+
+func tween_label(label: Label) -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "scale", Vector2(1.5, 1.5), 0.2).set_trans(Tween.TRANS_LINEAR)
+	tween.parallel().tween_property(label, "modulate", Color.GREEN, 0.2)
+	tween.tween_property(label, "scale", Vector2(1, 1), 0.2).set_trans(Tween.TRANS_LINEAR)
+	tween.parallel().tween_property(label, "modulate", label.modulate, 0.2)
 
 func update_ui_data_text() -> void:
 	calendar_text.text = str(DataManager.calendar)
