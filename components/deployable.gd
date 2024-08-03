@@ -19,11 +19,12 @@ func _ready() -> void:
 func _on_mouse_entered() -> void:
 	if not DataManager.preview_active:
 		descriptor_ui.show()
+		if resource.hover_cursor:
+			Input.set_custom_mouse_cursor(resource.hover_cursor)
 		if resource.can_sell:
 			if ready_for_sale:
 				Input.set_custom_mouse_cursor(sell_cursor)
-		elif resource.hover_cursor:
-			Input.set_custom_mouse_cursor(resource.hover_cursor)
+
 
 func _on_mouse_exited() -> void:
 	descriptor_ui.hide()

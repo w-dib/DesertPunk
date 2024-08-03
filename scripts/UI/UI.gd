@@ -35,16 +35,17 @@ signal day_advanced
 
 func _ready() -> void:
 	popup_panel.hide()
-	connect_buttons()
+	connect_signals()
+	update_ui_data_text()
 	
-func _process(_delta: float) -> void:
-	##TODO CUT AND PASTE BELOW AS ONREADY IN THE DATAMANAGER AUTOLOADER
-	calendar_text.text = str(DataManager.calendar)
-	coin_text.text = str(DataManager.coins)
-	wood_text.text = str(DataManager.wood)
-	stone_text.text = str(DataManager.stone)
-	water_text.text = str(DataManager.water) + " / 10"
-	progress_bar.value = DataManager.water
+#func _process(_delta: float) -> void:
+	###TODO CUT AND PASTE BELOW AS ONREADY IN THE DATAMANAGER AUTOLOADER
+	#calendar_text.text = str(DataManager.calendar)
+	#coin_text.text = str(DataManager.coins)
+	#wood_text.text = str(DataManager.wood)
+	#stone_text.text = str(DataManager.stone)
+	#water_text.text = str(DataManager.water) + " / 10"
+	#progress_bar.value = DataManager.water
 		
 func handle_action_bar_press(button_pressed: Button) -> void:
 	match button_pressed:
@@ -76,7 +77,19 @@ func deploy(resource: DeployableResource) -> void:
 func check_end_day() -> void:
 	popup_panel.show()
 
-func connect_buttons() -> void:
+func on_ui_data_updated(variable_name: String, new_value: int) -> void:
+	print(variable_name + " is updated to " + str(new_value))
+	update_ui_data_text()
+
+func update_ui_data_text() -> void:
+	calendar_text.text = str(DataManager.calendar)
+	coin_text.text = str(DataManager.coins)
+	wood_text.text = str(DataManager.wood)
+	stone_text.text = str(DataManager.stone)
+	water_text.text = str(DataManager.water) + " / 10"
+	progress_bar.value = DataManager.water
+
+func connect_signals() -> void:
 	barley_button.pressed.connect(handle_action_bar_press.bind(barley_button))
 	dates_button.pressed.connect(handle_action_bar_press.bind(dates_button))
 	goat_button.pressed.connect(handle_action_bar_press.bind(goat_button))
@@ -86,3 +99,4 @@ func connect_buttons() -> void:
 	yes_button.pressed.connect(handle_action_bar_press.bind(yes_button))
 	no_button.pressed.connect(handle_action_bar_press.bind(no_button))
 	hammer_button.toggled.connect(_on_hammer_button_toggled)
+	DataManager.ui_data_updated.connect(on_ui_data_updated)
