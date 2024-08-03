@@ -112,9 +112,13 @@ func connect_signals() -> void:
 	hammer_button.toggled.connect(_on_hammer_button_toggled)
 	DataManager.ui_data_updated.connect(on_ui_data_updated)
 
-func _on_out_of_water() -> void:
+func _on_resource_missing(variable_name: String) -> void:
+	var label = get_node("%" + variable_name.capitalize() + "Text")
+	tween_label_error(label)
+
+func tween_label_error(label: Label) -> void:
 	var tween = get_tree().create_tween()
-	tween.tween_property(water_text, "scale", Vector2(1.5, 1.5), 0.2).set_trans(Tween.TRANS_BOUNCE)
-	tween.parallel().tween_property(water_text, "modulate", Color.RED, 0.1)
-	tween.tween_property(water_text, "scale", Vector2(1, 1), 0.2).set_trans(Tween.TRANS_BOUNCE)
-	tween.parallel().tween_property(water_text, "modulate", Color(1, 1, 1, 1), 0.1)
+	tween.tween_property(label, "scale", Vector2(1.5, 1.5), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(label, "modulate", Color.RED, 0.1)
+	tween.tween_property(label, "scale", Vector2(1, 1), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	tween.parallel().tween_property(label, "modulate", Color(1, 1, 1, 1), 0.1)

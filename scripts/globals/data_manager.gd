@@ -7,7 +7,7 @@ var calendar: int = 1:
 		if calendar != new_value:
 			calendar = new_value
 			ui_data_updated.emit("calendar", new_value)
-var coins: int = 10:
+var coins: int = 5:
 	set(new_value):
 		if coins != new_value:
 			coins = new_value
@@ -17,12 +17,12 @@ var water: int = 10:
 		if water != new_value:
 			water = new_value
 			ui_data_updated.emit("water", new_value)
-var wood: int = 10:
+var wood: int = 0:
 	set(new_value):
 		if wood != new_value:
 			wood = new_value
 			ui_data_updated.emit("wood", new_value)
-var stone: int = 1:
+var stone: int = 0:
 	set(new_value):
 		if stone != new_value:
 			stone = new_value

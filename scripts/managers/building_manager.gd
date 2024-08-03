@@ -87,9 +87,9 @@ func check_building_build_conditions():
 	return true
 	
 func check_free_tile_build_conditions():
-	var collision_count = get_collision_count()
-	for i in collision_count:
-		var collider = get_collider(i)
+	var collision_count := get_collision_count()
+	for i: int in collision_count:
+		var collider := get_collider(i)
 		if collider:
 			if not collider.is_in_group("tilemap"):
 				return false

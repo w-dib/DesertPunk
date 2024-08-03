@@ -30,11 +30,11 @@ func advance_day() -> void:
 		ready_for_sale = true
 	
 func hide_sprite(index: int) -> void:
-	var node = find_child(str(index))
+	var node: = find_child(str(index))
 	node.hide()
 
 func show_sprite(index: int) -> void:
-	var node = find_child(str(index))
+	var node: = find_child(str(index))
 	node.show()
 
 func update_floor() -> void:

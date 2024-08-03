@@ -1013,6 +1013,6 @@ position = Vector2(472, 88)
 script = ExtResource("18_q5lwa")
 tiles = NodePath("../Tiles")
 
-[connection signal="out_of_water" from="PreviewManager/DeploymentManager" to="UI" method="_on_out_of_water"]
+[connection signal="out_of_resource" from="PreviewManager/DeploymentManager" to="UI" method="_on_resource_missing"]
 
 [editable path="UI"]

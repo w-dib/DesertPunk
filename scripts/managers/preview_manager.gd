@@ -5,6 +5,8 @@ var can_build := false
 var can_afford := false
 var current_deployable_resource: DeployableResource
 
+
+
 @export var cell_width: int = 46
 @export var cell_height: int = 46
 
@@ -74,11 +76,17 @@ func _draw():
 
 func _input(event) -> void:		
 	if event.is_action_pressed("cancel") and DataManager.preview_active:
+		SoundManager.play_sound(5)
 		cancel_preview()
-	if event.is_action_pressed("interact") && can_build:
-		SoundManager.play_random_sound()
-		if check_if_can_afford(current_deployable_resource):
-			build()
+	if event.is_action_pressed("interact"):
+		if can_build:
+			SoundManager.play_random_sound()
+			if check_if_can_afford(current_deployable_resource):
+				build()
+		elif DataManager.preview_active:
+			SoundManager.play_sound(6)
+		else:
+			SoundManager.play_random_sound()
 
 func _on_buildable_state_changed(check_can_build: bool) -> void:
 	can_build = check_can_build
